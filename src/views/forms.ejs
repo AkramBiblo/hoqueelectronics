@@ -1,0 +1,236 @@
+
+
+
+<body>
+    
+    <!-- Form  -->
+<div class="container-fluid text-info bg-light mt-5 mb-2 border p-4">
+    <div class="container p-3">
+        <a class="btn btn-outline-dark admin-button" href="/toptech2022admin">Admin Panel</a>
+    </div>
+    <div class="container text-center">
+        <h1>Product upload Form</h1>
+    </div>
+    <div class="container d-flex justify-content-end">
+        
+        <form action="/edit" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" name="pid" class="form-control" placeholder="Product code">
+                <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-dark btn-sm">Edit</button>
+    
+                  <!-- <span class="input-group-text">Edit</span> -->
+                </div>
+              </div>
+        </form>
+    </div>
+
+    <%- include('./partials/error.ejs') %>
+    <%- include('./partials/successMsg.ejs') %>
+ 
+
+    <form action="/file/fileProcess" method="POST" enctype="multipart/form-data">
+        <div class="container mt-2">
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="flex-column justify-content-end">
+                        <div>
+                            <h6>Upload PP</h6>
+                        </div>
+                        <div class="mt-2 d-flex">
+                            <input type="file" name="ProductPics" required>
+                            <input type="file" name="ProductPics">
+                            <input type="file" name="ProductPics">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                
+                <div class="col">
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Type"><span class="text-danger">***</span> Type</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <!-- <input type="text" class="form-control" name="Type" placeholder="Type" value="<% if (locals.message != null) {%><%= message.Type %><% } %>" required> -->
+                            <div class="form-group">
+                                <select class="form-control" id="Type" name="Type">
+                                  <option>Select Product Type</option>
+                                  <option>Laptop</option>
+                                  <option>Accessories</option>
+                                </select>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Title"><span class="text-danger">***</span> Title</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Title" placeholder="Title" value="<% if (locals.message != null) {%><%= message.Title %><% } %>" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Webcam">Webcam</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Webcam" placeholder="Webcam" value="<% if (locals.message != null) {%><%= message.Webcam %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="OS">Operation System</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="OS" placeholder="Operation System" value="<% if (locals.message != null) {%><%= message.OS %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Audio">Audio</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Audio" placeholder="Audio" value="<% if (locals.message != null) {%><%= message.Audio %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="FR">Fingerprint Reader</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="FR" placeholder="Fingerprint Reader" value="<% if (locals.message != null) {%><%= message.FR %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Wireless">Wireless</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Wireless" placeholder="Wireless" value="<% if (locals.message != null) {%><%= message.Wireless %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="KF">Keyboard Feature</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="KF" placeholder="Keyboard Feature" value="<% if (locals.message != null) {%><%= message.KF %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Interface">Interface</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Interface" placeholder="Interface" value="<% if (locals.message != null) {%><%= message.Interface %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Battery">Battery</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Battery" placeholder="Battery" value="<% if (locals.message != null) {%><%= message.Battery %><% } %>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                   
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="BK">Backlit Keyboard</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="BK" placeholder="Backlit Keyboard" value="<% if (locals.message != null) {%><%= message.BK %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Dimensions">Dimensions</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Dimensions" placeholder="Dimensions" value="<% if (locals.message != null) {%><%= message.Dimensions %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Weight">Weight</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Weight" placeholder="Weight" value="<% if (locals.message != null) {%><%= message.Weight %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Color"><span class="text-danger">***</span> Color</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Color" placeholder="Color" value="<% if (locals.message != null) {%><%= message.Color %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="PD">Pointer Device</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="PD" placeholder="Pointer Device" value="<% if (locals.message != null) {%><%= message.PD %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Remark">Remark</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Remark" placeholder="Remark" value="<% if (locals.message != null) {%><%= message.Remark %><% } %>">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Price"><span class="text-danger">***</span> Price</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control email" name="Price" placeholder="Price" value="<% if (locals.message != null) {%><%= message.Price %><% } %>" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Qty"><span class="text-danger">***</span> Quantity</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="Qty" placeholder="Quantity" value="<% if (locals.message != null) {%><%= message.Qty %><% } %>" required>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4">
+                            <h6><label for="Description"><span class="text-danger">***</span> Description</label></h6>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" placeholder="Description" name="Description" value="<% if (locals.message != null) {%><%= message.Description %><% } %>" required>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-2">
+                    <h6><label for="FullDesc">Full Description</label></h6>
+                </div>
+                <div class="col-lg-10">
+                    <textarea style="border-radius: 10px;" name="FullDesc" id="FullDesc" cols="122" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-end mt-4 mr-3">
+                <input class="btn btn-success mr-2" name="submit" type="submit" value="Upload">
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+
+</body>
+

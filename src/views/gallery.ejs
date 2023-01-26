@@ -1,0 +1,69 @@
+<body>
+    <%- include('./partials/header.ejs') %>
+        
+        <div class="container-fluid d-flex flex-wrap p-3">
+                <% if (locals.message !== null) { message.forEach(function(product) { %> 
+                <!-- <div class="gallery border p-2 m-1 d-flex flex-wrap align-content-around" style="width:300px;"> -->
+                    <div class="gallery border p-2 m-1" style="width:270px;">
+                    <div class="container-fluid text-center">
+                        <h5><%= product.Title %></h5>
+                    </div>
+                    <div class="p-2">
+                        <a href="/details/<%= product.Id %>">
+                            <img src="/uploadedFiles/<%= product.File_1 %>" class="img-fluid rounded" code="<%= product.Id %>" height="300px" width="300px" alt="Product Image">
+                        </a>
+                    </div>
+                    <div class="col p-2">
+                            <p><strong>Product Code :</strong> <%= product.Id %></p>
+                            <p><strong>Brand :</strong> <%= product.Brand %></p>
+                            <p><strong>Model :</strong> <%= product.Model %></p>
+                            <p><strong>Description :</strong> <%= product.Description %></p>
+                            <p><strong>Price (BDT) :</strong> <%= product.Price %></p>
+                            <p><strong>Qty :</strong> <%= product.Qty %></p>
+                            <button type="button" name="addToCart" productid="<%= product.Id %>" brand="<%= product.Brand %>" productTitle="<%= product.Title %>" model="<%= product.Model %>" price="<%= product.Price %>" class="btn btn-outline-dark btn-sm addToCart">
+                                <span class="fab fa-opencart"></span> Add to cart
+                            </button>
+                    </div>
+                </div>
+                <% })} %> 
+            
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+
+        <script>
+
+            $(document).ready(() => {
+                fillTheCheckBox()
+                if (window.innerWidth < 500) {
+                    $('#productNavbar').removeClass('d-flex justify-content-center')
+                }
+
+                function fillTheCheckBox() {
+                    
+                    let brands = ['Asus', 'Acer', 'Apple', 'Anatel', 'ARCTIC', 'Au-Optronics',
+                                'AzureWave', 'BarraCuda', 'BOE', 'Chicony', 'Chimei Innolux Corp', 'Compaq','Dell','Delta','FIRECUDA','FSP GROUP INC',
+                                'Gigabyte','Hasee','HGST','HP','HP-COMPAQ','HUAWEI','IBM','Lenovo','LG','LITE-ON','Micron','Microsoft Surface','NANYA',
+                                'Netac','Onten','Qualcomm Atheros','Ralink','Razer','Realtek','Sumsung','SAMSWEET','SanDisk','Seagate','SHARP','SK Hynix',
+                                'Sony','SSK','Toshiba','Uogic','Western', 'Digital','WiWU','Broadcom','Crucial','Fujitsu','Google','Intel','Microsoft','MSI','WIT','Xiaomi',
+                            ]
+                    for (let i = 0; i < brands.length; i++) {
+                        const elem = brands[i];
+                        $('#brandFilterForm').append(`<div class="container">
+                                <input type="checkbox" name="${elem}" id="${elem}"> &nbsp;&nbsp; ${elem}
+                            </div>`)
+                    }
+                }
+
+                $('#showlist').click(() => {
+                    if ($('#filterDiv-1').hasClass('hide')) {
+                        $('#filterDiv-1').removeClass('hide')
+                    } else {
+                        $('#filterDiv-1').addClass('hide')
+                    }
+                    
+                })
+                
+            })
+        </script>
+</body>

@@ -1,0 +1,588 @@
+<header>
+  <!-- <div class="container-fluid f primary_contact_2 p-2">
+    <p><i class="fa fa-envelope"></i>&nbsp;<a class="text-info" style="text-decoration: none;"
+        href="mailto:toptechonlineshop.bd@gmail.com">toptechonlineshop.bd@gmail.com</a></p>
+    <p style="margin-top: -10px;"><i class="fa fa-phone"></i>&nbsp;<a class="text-info"
+        href="tel: +8801984701062">(+880) 1984-701062</a></p>
+        <div class="container d-flex justify-content-end">
+          <button name="myCart" type="button" class="btn btn-outline-dark btn-sm menu mt-1">
+            <span class="fab fa-opencart"></span> My cart
+          </button>
+        </div>
+  </div> -->
+  <div class="row p-2">
+    <div class="col">
+      <p class="p-2" style="border-radius: 20px;"><i class="fa fa-envelope"></i>&nbsp;<a class="text-info"
+        style="text-decoration: none;" href="mailto:hoqueelectronics@gmail.com">hoqueelectronics@gmail.com</a>
+      &nbsp;<i class="fa fa-phone"></i>&nbsp;<a class="text-info" href="tel:+8801984701062">(+880) 1984-701062</a></p>
+    </div>
+    <div class="col" id="topMyCart">
+      <div class="container d-flex justify-content-end">
+        <button id="myCart_1" name="myCart" type="button" class="btn btn-outline-dark btn-sm menu mt-1">
+          <span class="fab fa-opencart"></span> My cart
+        </button>
+        <a href="/mycart" id="myCart_2" type="button" class="btn btn-outline-dark btn-sm mt-1">
+          <span class="fab fa-opencart"></span> My cart
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container primary_contact_1 p-1 f">
+    <p class="p-2" style="border-radius: 20px;"><i class="fa fa-envelope"></i>&nbsp;<a class="text-info"
+        style="text-decoration: none;" href="mailto:toptechonlineshop.bd@gmail.com">toptechonlineshop.bd@gmail.com</a>
+      &nbsp;<i class="fa fa-phone"></i>&nbsp;<a class="text-info" href="tel:+8801984701062">(+880) 1984-701062</a></p>
+  </div> -->
+  
+  <div class="container-fluid" id="top">
+    <div class="row p-2">
+      <div class="col-sm">
+        <img class="logo" src="/img/logo.png" alt="Logo">
+      </div>
+      <div class="col f d-flex justify-content-center" id="HomeNavbar">
+        <ul class="nav" id="HomeNavbarUl">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg d-flex justify-content-end searchDiv_1">
+        <form action="/search" method="post">
+          <div class="container sticky" id="searchDiv_1">
+            <div class="input-group">
+              <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
+              <div class="input-group-append">
+                <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid f" id="searchDiv_2">
+    <div class="container-fluid f d-flex justify-content-center mb-4">
+      <form action="/search" method="post">
+          <div class="input-group">
+            <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
+            <div class="input-group-append">
+              <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+  <div class="container-fluid p0" id="productNavbarDiv">
+    <div class="container-fluid" id="productNavbar">
+      <div class="container-fluid d-flex justify-content-center">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar_2">
+            <ul class="navbar-nav text-light">
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="laptop" id="laptop">REFRIGERATOR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="laptopAccessories" id="laptopAccessories">LED TV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="computerAccessories" id="computerAccessories">WASHING MACHINE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="gamingDevices" id="gamingDevices">AIR CONDITIONER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="AppleMacBookAccessories" id="AppleMacBookAccessories">HOME APPLIANCE</a>
+              </li>
+              <li class="nav-item" id="bottomMyCart">
+                <button name="myCart" type="button" class="btn btn-outline-light btn-sm menu mt-1">
+                  <span class="fab fa-opencart"></span> My cart
+                </button>
+                <!-- <i id="mycart" class="material-icons mt-2" style="font-size:36px">add_shopping_cart</i> -->
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="container-fluid" id="productNavbar_2">
+      <div class="container-fluid d-flex justify-content-center" id="navSrink">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar_2">
+            <ul class="navbar-nav text-light">
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="laptop" id="laptop">LAPTOPS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="laptopAccessories" id="laptopAccessories">LAPTOPS
+                  ACCESSORIES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="computerAccessories" id="computerAccessories">COMPUTER HARDWARE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="gamingDevices" id="gamingDevices">GAMING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="AppleMacBookAccessories" id="AppleMacBookAccessories">APPLE MACBOOK ACCESSORIES</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="container-fluid" id="productsMenu" style="background-color: #D6DBDF;">
+      <div class="container">
+        <div class="row subMenus p-3" id="laptopMenu">
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/brand/Dell/Laptop">Dell</a></li>
+              <li><a class="search" href="/search/brand/Hp/Laptop">Hp</a></li>
+              <li><a class="search" href="/search/brand/Lenovo/Laptop">Lenovo</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/brand/Asus/Laptop">Asus</a></li>
+              <li><a class="search" href="/search/brand/Acer/Laptop">Acer</a></li>
+              <li><a class="search" href="/search/brand/Apple/Laptop">Apple</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/brand/Samsung/Laptop">Samsung</a></li>
+              <li><a class="search" href="/search/brand/Intel/Laptop">Intel</a></li>
+              <li><a class="search" href="/search/brand/HUAWEI/Laptop">HUAWEI</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/brand/Toshiba/Laptop">Toshiba</a></li>
+              <li><a class="search" href="/search/brand/Walton/Laptop">Walton</a></li>
+              <li><a class="search" href="/search/brand/China/Laptop">China</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <img class="img-fluid" src="/img/banner/laptopGif.gif" alt="Laptop">
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="laptopAccessoriesMenu">
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Laptop Motherboard">Laptop Motherboard</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Storage Devices">Laptop Storage Devices</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Battery">Laptop CMOS/RTC Battery</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Laptop Internal WIFI">Laptop Internal WIFI</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Stand">Laptop Hinges/Stand</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Keypad">Laptop Keypad</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Laptop Palmrest">Laptop Palmrest</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Display">Laptop Touch Screen/Display</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Adapter">Laptop Adapter</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Laptop RAM">Laptop RAM</a></li>
+              <li><a class="search" href="/search/accessories/Laptop Processor">Laptop Processor</a></li>
+              <li><a class="search" href="/search/accessories/Laptop DC Power Port">Laptop DC Power Port/Jack</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Laptop Daughterboard">Laptop Daughterboard</a></li>
+              <li><a class="search" href="/search/accessories/Laptop HDD SSD">Laptop HDD/SSD</a></li>
+              <li><a class="search" href="/search/accessories/Laptop accessories">Other Accessories</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="computerAccessoriesMenu">
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Computer Motherboard">Computer Motherboard</a></li>
+              <li><a class="search" href="/search/accessories/Computer CPU">Central Processing Unit (CPU)</a></li>
+              <li><a class="search" href="/search/accessories/Computer Processor">Computer Processor</a></li>
+              
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Computer RAM">Computer RAM</a></li>
+              <li><a class="search" href="/search/accessories/Computer VGA">Computer VGA Card</a></li>
+              <li><a class="search" href="/search/accessories/Computer Keyboard">Computer Keyboard</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Computer Mouse">Computer Mouse</a></li>
+              <li><a class="search" href="/search/accessories/Computer Monitor">Computer Monitor</a></li>
+              <li><a class="search" href="/search/accessories/Computer Cable">Computer VGA/Power Cables</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Computer HDD">Computer HDD</a></li>
+              <li><a class="search" href="/search/accessories/Computer UPS">Computer UPS</a></li>
+              <li><a class="search" href="/search/accessories/Computer SSD">Solid-State Drive (SSD)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="gamingDevicesMenu">
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Gaming PC">Gaming PC</a></li>
+              <li><a class="search" href="/search/Laptop/Gaming Laptop">Gaming Laptop</a></li>
+              <li><a class="search" href="/search/accessories/Gaming PC Handset">Gaming Headset</a></li>
+            </ul>
+            
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Gaming Monitor">High-Resolution Gaming Monitor</a></li>
+              <li><a class="search" href="/search/accessories/Gaming CPU">Gaming (CPU)</a></li>
+              <li><a class="search" href="/search/accessories/Gaming Mouse">RGB Gaming Mouse</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Gaming Keyboard">Gaming Keyboard</a></li>
+              <li><a class="search" href="/search/accessories/Gaming Controller">Bluetooth Gaming Controller</a></li>
+              <li><a class="search" href="/search/accessories/Gaming Webcam">4K Gaming Webcam</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="AppleMacBookAccessoriesMenu">
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Apple MacBook SSD">Apple MacBook SSD</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook Battery">Apple MacBook Battery</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook Display">Apple MacBook Display/Screen</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Apple MacBook Keyboard">Apple MacBook Keyboard</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook RAM">Apple MacBook RAM</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook Power Adapter">Apple MacBook Power Adapter</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/accessories/Apple MacBook WIFI Card">Apple MacBook WIFI Card</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook Cooling Fan">Apple MacBook Cooling Fan</a></li>
+              <li><a class="search" href="/search/accessories/Apple MacBook Cable">Apple MacBook Cables</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="myCartMenu">
+          <div class="container text-center">
+            <h4>My Cart</h4>
+          </div>
+          <div class="container">
+            <table class="table table-light table-hover table-bordered">
+              <thead class="thead-dark text-center">
+                <tr>
+                  <th>Product Code</th>
+                  <th>Product Name</th>
+                  <th>Product Model</th>
+                  <th>Brand</th>
+                  <th>Qty</th>
+                  <th>Unit Price</th>
+                  <th>Total Price</th>
+                  <th>Remove items</th>
+                </tr>
+              </thead>
+              <tbody class="text-center" id="cartItems">
+                
+              </tbody>
+            </table>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <h5 class="m-3">Total Price: <span id="totalCartPrice" value="0"></span></h5>
+            <a href="/checkout" type="button" id="checkoutBtn" value="0" class="btn btn-outline-dark btn-sm m-3">Checkout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-3 d-flex flex-wrap p0" id="displaySearchResult">
+    
+  </div>
+    
+
+  <script>
+    $('#myCart_2').hide()
+    $(document).ready(() => {
+      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      if (window.innerWidth < 500) {
+        $('#HomeNavbar').removeClass('d-flex justify-content-center')
+        $('#HomeNavbarUl').removeAttr('style')
+        $('#HomeNavbarUl').css('margin-top', '20px')
+        $('#searchBar').removeAttr('style')
+        $('#searchDiv_1').removeAttr('style')
+        $('.primary_contact_1').hide()
+        $('.primary_contact_2').show()
+        $('.logo').css('height', '100px')
+        $('#productNavbar').removeClass('d-flex justify-content-center')
+        $('#filterDiv').hide()
+        $('#navSrink').removeClass('justify-content-center')
+        $('#navSrink').addClass('justify-content-start')
+        $('#myCart_1').hide()
+        $('#myCart_2').show()
+      }
+      $('.subMenus').hide()
+      // $('#checkoutBtn').hide()
+      // $('#priceHeading').hide()
+
+      $('.menu').click((e) => {
+        let name = e.target.getAttribute('name')
+        $('.subMenus').hide()
+        if (name == 'laptop') {
+            $('#laptopMenu').show(500)
+            $('#laptopMenu').mouseleave(() => {
+              $('#laptopMenu').hide(500)
+            })
+        } else if (name == 'laptopAccessories') {
+            $('#laptopAccessoriesMenu').show(500)
+            $('#laptopAccessoriesMenu').mouseleave(() => {
+              $('#laptopAccessoriesMenu').hide(500)
+            })
+        } else if (name == 'computerAccessories') {
+          $('#computerAccessoriesMenu').show(500)
+          $('#computerAccessoriesMenu').mouseleave(() => {
+              $('#computerAccessoriesMenu').hide(500)
+            })
+        } else if (name == 'gamingDevices') {
+          $('#gamingDevicesMenu').show(500)
+          $('#gamingDevicesMenu').mouseleave(() => {
+              $('#gamingDevicesMenu').hide(500)
+            })
+        } else if (name == 'AppleMacBookAccessories') {
+          $('#AppleMacBookAccessoriesMenu').show(500)
+          $('#AppleMacBookAccessoriesMenu').mouseleave(() => {
+              $('#AppleMacBookAccessoriesMenu').hide(500)
+            })
+        } else if (name == 'myCart') {
+          $('#cartItems').empty()
+          if (document.cookie) {
+        let decodedCookie = decodeURIComponent(document.cookie);
+                      let cartD = decodedCookie.slice(9);
+                      let ca = cartD.split('+');
+                      let tPrice = 0
+                      for (let i = 0; i < ca.length; i++) {
+                        const e = ca[i];
+                        let arr = e.split(',')
+                        let totalPrice = Number(arr[6])
+                        tPrice += totalPrice
+                        
+                        $('#cartItems').append(`
+                          <tr remove="${arr[0]}">
+                            <td>${arr[0]}</td>
+                            <td>${arr[1]}</td>
+                            <td>${arr[2]}</td>
+                            <td>${arr[3]}</td>
+                            <td><input onchange="calculate(this.value, ${arr[5]}, ${arr[0]})" type='number' value="${arr[4]}" min="1"/></td>
+                            <td>${arr[5]}</td>
+                            <td cAmount="${arr[0]}">${arr[6]}</td>
+                            <td><button onclick="removeCartItem(${arr[0]})" class="btn btn-outline-danger">Remove</button></td>
+                          </tr>
+                        `)
+                      }
+                        $('#totalCartPrice').val(tPrice)
+                        $('#totalCartPrice').text(tPrice)
+                        $('#checkoutBtn').val(tPrice)
+      }
+          $('#myCartMenu').show(500)
+          $('#myCartMenu').mouseleave(() => {
+              $('#myCartMenu').hide(500)
+            })
+        }
+      })
+
+      // $('button').click((e) => {
+      //   let TargetName = e.target.getAttribute('name')
+      //   if (TargetName == 'search_submit_button') {
+      //     let SInput = $('#search_input').val()
+      //     $.ajax({
+      //       url: '/search',
+      //       type: 'POST',
+      //       data: {
+      //         SI: SInput
+      //       },
+      //       success: (data) => {
+      //         $('#displaySearchResult').empty()
+      //         if (data.emptyResult) {
+      //           $('#displaySearchResult').append(
+      //             `<div class="container mt-5 text-center">
+      //                             <div class="alert alert-danger">
+      //                               ${data.emptyResult}
+      //                             </div>
+      //                         </div>`
+      //           )
+      //         } else {
+
+      //           $('#displaySearchResult').append(data)
+
+      //         }
+
+      //       }
+      //     })
+      //   }
+
+      // })
+
+      $('.addToCart').click((e) => {
+      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+                    let TargetName = e.target.getAttribute('name')
+                    let PT = e.target.getAttribute('productTitle')
+                    let unitPrice = e.target.getAttribute('price')
+                    let totalPrice = unitPrice;
+                    let brand = e.target.getAttribute('brand')
+                    let PID = e.target.getAttribute('productid')
+                    let qty = 1;
+                    let model = e.target.getAttribute('model')
+                    let data = [PID,PT,model,brand, qty, unitPrice, totalPrice]
+                    if (document.cookie) {
+                      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                      let decodedCookie = decodeURIComponent(document.cookie);
+                      let cartD = decodedCookie.slice(9);
+                      let ca = cartD.split('+');
+                      for (let i = 0; i < ca.length; i++) {
+                        const e = ca[i];
+                        let arr = e.split(',')
+                        if (arr[0] == PID) {
+                          return alert("This item already added to your cart!")
+                        }
+                      }
+                        document.cookie = `cartData=${cartD + '+' + data};path=/;`;
+                        alert('Product added to your cart successfully!')
+                    } else {
+                      document.cookie = `cartData=${data};path=/;`;
+                      alert('Product added to your cart successfully!')
+                      // window.location.reload()
+                    }
+                        
+                })
+    
+})
+
+function calculate(v, a, id) {
+  let val = Number(v)
+  let amount = Number(a)
+  let totalAmount = val * amount;
+  let GrandAmount = 0;
+  document.querySelectorAll(`td[cAmount='${id}']`)[0].innerHTML = totalAmount;
+  let decodedCookie = decodeURIComponent(document.cookie);
+                      let cartD = decodedCookie.slice(9);
+                      if (cartD.includes("+") == true) {
+                          let ca = cartD.split('+');
+                          let cookieData = [];
+                          
+                        for (let i = 0; i < ca.length; i++) {
+                          const e = ca[i];
+                          let arr = e.split(',')
+                          if (arr[0] == id) {
+                            arr[4] = val
+                            arr[6] = totalAmount
+                            let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                            GrandAmount+= totalAmount;
+                            if (i == 0) {
+                              cookieData.push(data)
+                            } else {
+                              cookieData.push('+' + data)
+                            }
+                          } else {
+                            let singleAmount = Number(arr[6])
+                            GrandAmount+= singleAmount;
+                            if (i == 0) {
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              cookieData.push(data)
+                            } else {
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              cookieData.push('+' + data)
+                            }
+                          }
+                        }
+                        
+                        document.cookie = `cartData=${cookieData};path=/;`;
+                      } else {
+                        let arr = cartD.split(',')
+                        arr[4] = val
+                        arr[6] = totalAmount
+                        GrandAmount+= totalAmount;
+                        let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                        document.cookie = `cartData=${data};path=/;`;
+                      }
+                      
+                      
+                 document.getElementById('totalCartPrice').innerHTML = GrandAmount;   
+                 document.getElementById('totalCartPrice_2').innerHTML = GrandAmount;   
+}
+
+ function removeCartItem(id) {
+  let pid = Number(id)
+  document.querySelectorAll(`tr[remove="${id}"]`)[0].remove()
+  
+  let decodedCookie = decodeURIComponent(document.cookie);
+                      let cartD = decodedCookie.slice(9);
+                      
+                      if (cartD.includes("+") == true) {
+                          let ca = cartD.split('+');
+                          let cookieData = [];
+                          let GrandAmount = 0;
+                        for (let i = 0; i < ca.length; i++) {
+                          const e = ca[i];
+                          let arr = e.split(',')
+                          let pidInArr = Number(arr[0])
+                          if (pid !== pidInArr) {
+                            let singleAmount = Number(arr[6]);
+                            GrandAmount+= singleAmount
+                            if (i == 0) {
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              cookieData.push(data)
+                            } else if (cookieData.length > 0) {
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              cookieData.push('+' + data)
+                            } else {
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              cookieData.push(data)
+                            }
+                          }
+                        }
+                        document.cookie = `cartData=${cookieData};path=/;`;
+                        document.getElementById('totalCartPrice').innerHTML = GrandAmount;  
+                      } else {
+                        document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                        document.getElementById('totalCartPrice').innerHTML = 0; 
+                      }
+                      
+                      
+                 
+ }
+ 
+ </script>
+</header>

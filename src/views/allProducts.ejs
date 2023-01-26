@@ -1,0 +1,30 @@
+<body>
+    <div class="container p-3">
+        <a class="btn btn-light admin-button" href="/toptech2022admin">Admin Panel</a>
+    </div>
+        <div class="container-fluid d-flex flex-wrap p-3">
+                <% if (locals.message !== null) { message.forEach(function(product) { %> 
+                <!-- <div class="gallery border p-2 m-1 d-flex flex-wrap align-content-around" style="width:300px;"> -->
+                    <div class="gallery border p-2 m-1" style="width:270px;">
+                    <div class="container-fluid text-center">
+                        <h5><%= product.Title %></h5>
+                    </div>
+                    <div class="p-2">
+                        <a href="/details/<%= product.Id %>">
+                            <img src="/uploadedFiles/<%= product.File_1 %>" class="img-fluid rounded" code="<%= product.Id %>" height="300px" width="300px" alt="Product Image">
+                        </a>
+                    </div>
+                    <div class="col p-2">
+                            <p><strong>Product Code :</strong> <%= product.Id %></p>
+                            <p><strong>Brand :</strong> <%= product.Brand %></p>
+                            <p><strong>Model :</strong> <%= product.Model %></p>
+                            <p><strong>Description :</strong> <%= product.Description %></p>
+                            <p><strong>Price (BDT) :</strong> <%= product.Price %></p>
+                            <p><strong>Qty :</strong> <%= product.Qty %></p>
+                    </div>
+                </div>
+                <% })} %> 
+            
+        </div>
+
+</body>
