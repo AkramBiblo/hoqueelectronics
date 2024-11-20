@@ -2,25 +2,32 @@
 
    <div class="container mt-3">
     <div class="container d-flex justify-content-end">
-        <button onclick="logout()" id="logoutBtn" class="btn btn-light s" href="/logout">Logout</button>
+        <button onclick="logout()" id="logoutBtn" class="btn btn-light s">Logout</button>
+        <!-- <button onclick="logout()" id="logoutBtn" class="btn btn-light s" href="/logout">Logout</button> -->
     </div>
-    <div class="container text-light text-center p-3 p">
-            <h3 class="welcomeMsg">Welcome to TopTech admin panel</h3>
-            <h6>From where you control your store</h6>
+    <div class="container text-center p-3 p">
+            <h4 class="welcomeMsg">Welcome to Admin Panel</h4>
+            <p>From where you control your store</p>
     </div>
-    <div class="container text-center bg-warning border" style="max-width: 300px; padding: 20px; margin: auto; border-radius: 10px;">
+    <div class="container text-center border" style="max-width: 300px; padding: 20px; margin: auto; border-radius: 10px;">
         <div class="list-group">
-            <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/forms">Product Upload Form</a>
-            <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/products/all">All Products</a>
-            <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/pay">Payments</a>
-            <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/expenses">Expenses</a>
-            <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/info">Income status</a>
+            <a type="button" class="list-group-item list-group-item-action list-group-item-primary" style="text-decoration: none;" href="/productUploadForm">Product Upload Form for Gallary</a>
+            <a type="button" class="list-group-item list-group-item-action list-group-item-primary" style="text-decoration: none;" href="/allproducts">All Products</a>
+            <a type="button" class="list-group-item list-group-item-action list-group-item-primary" style="text-decoration: none;" href="/updatemrp">Update MRP</a>
+            <a type="button" class="list-group-item list-group-item-action list-group-item-primary" style="text-decoration: none;" href="/StockDetails">Stock Details</a>
+            <a type="button" class="list-group-item list-group-item-action list-group-item-primary" style="text-decoration: none;" href="/orders">Orders <span class="badge badge-light"><% if (locals.notify){%> <%= locals.notify %> <%} %></span></a>
+            <!-- <button type="button" class="btn btn-primary">
+                Messages <span class="badge badge-light">4</span>
+            </button> -->
+            <!-- <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/pay">Payments</a> -->
+            <!-- <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/expenses">Expenses</a> -->
+            <!-- <a class="list-group-item list-group-item-action list-group-item-success" style="text-decoration: none;" href="/payment/info">Income status</a> -->
         </div>
     </div>
    </div>
     <script>
         function logout() {
-    document.cookie = "pcs=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "HEAdmin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     location.href = '/'
     }
     </script>

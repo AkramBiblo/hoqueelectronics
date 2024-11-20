@@ -1,0 +1,207 @@
+<body>
+    <div class="container d-flex justify-content-center mt-5">
+        <h4>Product Upload Form</h4>
+    </div>
+    <hr>
+    <div class="container mt-4 p-3">
+        <a class="btn btn-light admin-button" href="/he2024admin">Admin Panel</a>
+        <a class="btn btn-outline-dark admin-button" href="/allproducts">All Products</a>
+    </div>
+    <%- include("./partials/successMsg.ejs")  %>
+    <%- include("./partials/error.ejs")  %>
+    <% if (locals.message != null) {%>
+    <form action="/editedProductUpload" method="post">
+        <div class="container p-3">
+        <div class="container-fluid">
+            <h6>Primary Section</h6>
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <div class="form-group">
+                    <select class="form-control" name="brand" required>
+                        <option>Select Brand</option>
+                        <option>Walton</option>
+                        <option>Vision</option>
+                        <option>Samsung</option>
+                        <option>Jamuna</option>
+                        <option>Konka</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="model" value="<%= message.model%>">
+            </div>
+            <div class="col-sm">
+                <select class="form-control" name="category" required>
+                    <option>Select Category</option>
+                    <option>Refrigerators & Freezer</option>
+                    <option>LED TV</option>
+                    <option>Air Conditioner</option>
+                    <option>Washing Machine</option>
+                    <option>Air Cooler</option>
+                    <option>Geyser</option>
+                    <option>Kettle</option>
+                    <option>Room Heater</option>
+                    <option>Trimmer, Shaver & Hair Clipper</option>
+                    <option>Mosquito Bat</option>
+                    <option>Water Purifier & Dispenser</option>
+                    <option>Iron</option>
+                    <option>Toaster, Cake & Sandwich Maker</option>
+                    <option>Rechargable Lamp & Torch</option>
+                    <option>Voltage Stabilizer & Protector</option>
+                    <option>Sewing Machine</option>
+                    <option>Gas Stove</option>
+                    <option>Induction, Infrared & Hot Plate Cooker</option>
+                    <option>Rice Cooker</option>
+                    <option>Grinder</option>
+                    <option>Roti Maker</option>
+                    <option>Pressure Cooker</option>
+                    <option>Blender</option>
+                    <option>Multi Cooker</option>
+                    <option>Kitchen Hood</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" id="sub_category_div">
+                <select class="form-control" name="sub_category">
+                    <option class="ref_sub_cat sub_category">Sub Category</option>
+                    <option class="ref_sub_cat sub_category">French Door Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Side by Side Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Base Freezer Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Top-Freezer Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Mini Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Bar Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Business Refrigerators</option>
+                    <option class="ref_sub_cat sub_category">Direct cool refrigerator</option>
+                    <option class="ref_sub_cat sub_category">Non Frost refrigerator</option>
+                    <option class="tv_sub_cat sub_category">Basic TV</option>
+                    <option class="tv_sub_cat sub_category">Smart LED TV</option>
+                    <option class="tv_sub_cat sub_category">4K Ultra HD TV</option>
+                    <option class="tv_sub_cat sub_category">Android LED TV</option>
+                    <option class="tv_sub_cat sub_category">TV Accessories</option>
+                    <option class="ac_sub_cat sub_category">Inverter AC</option>
+                    <option class="ac_sub_cat sub_category">Non Inverter AC</option>
+                    <option class="ac_sub_cat sub_category">Cassette Type AC</option>
+                    <option class="ac_sub_cat sub_category">Ceiling Type AC</option>
+                    <option class="wm_sub_cat sub_category">Front Loading</option>
+                    <option class="wm_sub_cat sub_category">Top Loading</option>
+                </select>
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="demoPrice" value="<%= message.mrp%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="offerPrice" value="<%= message.offer_price%>">
+            </div>
+            <div class="col">
+                <textarea name="sub_description" cols="50" rows="2"><%= message.sub_description %></textarea>
+            </div>
+        </div>
+        </div>
+        <!-- <div class="container-fluid mt-4">
+            <h6>Sub Description Section</h6>
+            <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subD_1" placeholder="Description 1">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subD_2" placeholder="Description 2">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subD_3" placeholder="Description 3">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subD_4" placeholder="Description 4">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subD_5" placeholder="Description 5">
+            </div>
+        </div>
+        </div> -->
+        <div class="container-fluid mt-4">
+            <h6>Image Section</h6>
+            <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="displayImg" value="<%= message.display_img%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subImg_1" value="<%= message.sub_img_1%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subImg_2" value="<%= message.sub_img_2%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subImg_3" value="<%= message.sub_img_3%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="subImg_4" value="<%= message.sub_img_4%>">
+            </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-4">
+            <h6>Features Section</h6>
+            <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="featureImg_1" value="<%= message.feature_img_1%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="featureImg_2" value="<%= message.feature_img_2%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="featureImg_3" value="<%= message.feature_img_3%>">
+            </div>
+            <div class="col-sm">
+                <input type="text" class="form-control" name="featureImg_4" value="<%= message.feature_img_4%>">
+            </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-4 pb-3">
+        
+            <div class="row">
+                <div class="col-sm">
+                    <h6>Text Features</h6>
+                    <textarea name="textfeature" id="" cols="50" rows="5"><%= message.warrenty%></textarea>
+                </div>
+                <div class="col-sm">
+                    <h6>Warrenty Section</h6>
+                    <textarea name="warrentyInfo" cols="100" rows="5"><%= message.warrenty%></textarea>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-end">
+                <input class="btn btn-outline-dark mr-2" name="submit" type="submit" value="submit" />
+                <input type="hidden" name="id" value="<%= message.id %>">
+            </div>
+        </div>
+    </div>
+    </form>
+    <% } %>
+
+    <script>
+        $("#sub_category_div").hide();
+        $(`select[name="category"]`).change(() => {
+            let name = $(`select[name="category"]`).val()
+            if (name == "Refrigerators & Freezer") {
+                $(".sub_category").hide();
+                $(".ref_sub_cat").show();
+                $("#sub_category_div").show();
+            } else if (name == "LED TV") {
+                $(".sub_category").hide();
+                $(".tv_sub_cat").show();
+                $("#sub_category_div").show();
+            } else if (name == "Air Conditioner") {
+                $(".sub_category").hide();
+                $(".ac_sub_cat").show();
+                $("#sub_category_div").show();
+            } else if (name == "Washing Machine") {
+                $(".sub_category").hide();
+                $(".wm_sub_cat").show();
+                $("#sub_category_div").show();
+            } else {
+                $("#sub_category_div").hide();
+            }
+        })
+    </script>
+</body>

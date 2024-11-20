@@ -1,0 +1,117 @@
+<body>
+  <div class="row">
+    <div class="col">
+      <div class="container text-center mt-4 p-3">
+        <a class="btn btn-light admin-button" href="/he2024admin">Admin Panel</a>
+        <!-- <a class="btn btn-light admin-button" href="/allproducts">All Products</a> -->
+        <a class="btn btn-light admin-button" href="/allOrders">All Orders</a>
+      </div>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+  <div class="container d-flex justify-content-end">
+    <h5>Total pending orders : <span id="pendingOrders"><% if (locals.message) {%><%= locals.message.length %><%} else {%>0<%}%></span></h5>
+  </div>
+  <%- include('./partials/error.ejs') %>
+
+    <div class="container mt-4">
+      <% if (locals.message) { for (let i=0; i < message.length; i++) { const item=message[i]; %>
+        <div class="container mt-3 p-3" style="background-color: antiquewhite;">
+          <p><strong>Customer Name: </strong>
+            <%=item.customer_name %>
+          </p>
+          <p><strong>Customer Address: </strong>
+            <%=item.address %>
+          </p>
+          <p><strong>Contact: </strong>
+            <%=item.phoneNumber %>
+          </p>
+          <div class="container d-flex justify-content-end">
+            <form action="/order_complete" method="post">
+              <input type="hidden" name="order_id" value="<%= item.order_id %>">
+              <button class="btn btn-outline-dark admin-button" type="submit"> Order Complete</button>
+            </form>
+          </div>
+          <div class="container text-center">
+            <strong>Order Details</strong>
+          </div>
+          <table class="table table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th>Model</td>
+                <th>Qty</td>
+                <th>Sale Value</td>
+                <th>Total</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (item.order_details.includes("+")) { 
+                let splitOrder=item.order_details.split("+") 
+                let total=0 
+                let totalQty=0 
+                let t;
+                for (let i=0; i < splitOrder.length; i++) { 
+                  const itemArray=splitOrder[i]; 
+                  let e=itemArray.split(",") 
+                  let convertToNumber=Number(e[5]) 
+                  let Qty=Number(e[3]) 
+                  totalQty += Qty; 
+                  total += convertToNumber 
+                  t = total.toLocaleString("en-IN")
+                  %>
+                <tr>
+                  <td>
+                    <%= e[1] %>
+                  </td>
+                  <td>
+                    <%= e[3] %>
+                  </td>
+                  <td>
+                    <%= e[4] %>
+                  </td>
+                  <td>
+                    <%= e[5] %>
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+          <hr />
+          <div class="container">
+            <h5 class="text-danger">Total Sale Value Tk. <%= t %>
+            </h5>
+          </div>
+        </div>
+        <% } else { let e=item.order_details.split(",") 
+        let up = Number(e[4])
+        let unitPrice = up.toLocaleString("en-IN")
+        let tp = Number(e[5])
+        let t = tp.toLocaleString("en-IN")
+        %>
+          <tr>
+            <td>
+              <%= e[1] %>
+            </td>
+            <td>
+              <%= e[3] %>
+            </td>
+            <td>
+              <%= unitPrice %>
+            </td>
+            <td>
+              <%= t %>
+            </td>
+          </tr>
+          </tbody>
+          </table>
+          <hr />
+          <div class="container">
+            <h5 class="text-danger">Total Sale Value Tk. <%= t %>
+            </h5>
+          </div>
+    </div>
+    <% }}} %>
+      </div>
+</body>

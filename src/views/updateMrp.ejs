@@ -1,0 +1,265 @@
+<body>
+  <div class="container mt-3 d-flex justify-content-center">
+    <h4>MRP Update</h4>
+  </div>
+  
+
+    
+
+    <div class="container-fluid d-flex flex-wrap p0" id="filterResult">
+    
+    </div>
+    
+    <div class="container">
+      
+      <div class="row">
+        <div class="col">
+            <div class="container pb-4">
+                <a class="btn btn-outline-dark admin-button" style="margin-top: 58px;" href="/he2024admin">Admin Panel</a>
+                <!-- <a class="btn btn-outline-dark admin-button" style="margin-top: 58px;" href="/productUploadForm">Product Upload Form</a> -->
+                <button class="btn btn-outline-dark admin-button" style="margin-top: 58px;" data-toggle="collapse" data-target="#demo">Search by Category</button>
+            </div>
+        </div>
+        <div class="col">
+          <div class="container" id="searchDiv_1">
+            <div class="input-group">
+              <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
+              <div class="input-group-append">
+                <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container p-4 collapse" id="demo">
+      <div class="row" style="max-width: 400px;">
+        <div class="container">
+            <div class="form-group">
+                <div class="form-group">
+                <select class="form-control" id="brand" name="brand" required>
+                    <option>Select Brand</option>
+                    <option>Walton</option>
+                    <option>Vision</option>
+                    <option>Samsung</option>
+                    <option>Jamuna</option>
+                    <option>Konka</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <select class="form-control" id="category" name="category" required>
+                    <option>Select Category</option>
+                    <option>Refrigerators & Freezer</option>
+                    <option>LED TV</option>
+                    <option>Air Conditioner</option>
+                    <option>Washing Machine</option>
+                    <option>Air Cooler</option>
+                    <option>Geyser</option>
+                    <option>Kettle</option>
+                    <option>Room Heater</option>
+                    <option>Trimmer, Shaver & Hair Clipper</option>
+                    <option>Mosquito Bat</option>
+                    <option>Water Purifier & Dispenser</option>
+                    <option>Iron</option>
+                    <option>Toaster, Cake & Sandwich Maker</option>
+                    <option>Rechargable Lamp & Torch</option>
+                    <option>Voltage Stabilizer & Protector</option>
+                    <option>Sewing Machine</option>
+                    <option>Gas Stove</option>
+                    <option>Induction, Infrared & Hot Plate Cooker</option>
+                    <option>Rice Cooker</option>
+                    <option>Grinder</option>
+                    <option>Roti Maker</option>
+                    <option>Pressure Cooker</option>
+                    <option>Blender</option>
+                    <option>Multi Cooker</option>
+                    <option>Kitchen Hood</option>
+                </select>
+        </div>
+        <div class="container-fluid d-flex justify-content-end mt-2">
+          <input type="submit" class="btn btn-outline-info" id="generate" value="Generate">
+        </div>
+      </div>
+    </div>
+        <% if (locals.message != null) { %> 
+        <table class="table bg-dark text-light">
+          <thead class="thead-light">
+            <tr class="">
+              <th>Image</th>
+              <th>Model</th>
+              <th>Category</th>
+              <th>Brand</th>
+              <th>Prv. MRP</th>
+              <th>Prv.Off.Price</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% message.forEach(function(item) {%>
+              <tr id="<%=item.id%>row">
+                  <td><img style="border-radius: 8px; max-height: 70px;max-width: 70px;" src="<%= item.display_img %>" alt="Image"></td>
+                  <!-- <td><%= item.id %></td> -->
+                  <% if (item.model.includes('Inch')) { let model = item.model.replace('Inch', '"') %>
+                      <td>
+                        <%= model %>
+                      </td>
+                      <% } else {%> <td>
+                        <%= item.model %>
+                      </td> <% } %>
+                  <td><%= item.category %></td>
+                  <td><%= item.brand %></td>
+                  <td>
+                    <input type="text" class="mrpinput" id="<%=item.id%>mrp" style="width: 100px;" placeholder="MRP">
+                    <span class="<%= item.id %>prvMrp <%= item.id %>prvValue"><%= item.mrp %></span>
+                  </td>
+                  <td>
+                    <input type="text" class="mrpinput" id="<%=item.id%>op" style="width: 100px;" placeholder="Offer Price">
+                    <span class="<%= item.id %>prvOp <%= item.id %>prvValue"><%= item.offer_price %></span>
+                  </td>
+                  <!-- updateButton/editButton/ -->
+                  <td>
+                      <button class="btn btn-outline-light updateButton" pid="<%= item.id %>" name="<%= item.id %>updateButton">Update</button>
+                      <button class="btn btn-outline-light editButton" pid="<%= item.id %>" name="<%= item.id %>editButton">Edit</button>
+                  </td>
+              </tr>
+             <% }) } %> 
+          </tbody>
+        </table>
+      </div>
+
+      <script>
+        $(document).ready(() => {
+                $(".updateButton").hide()
+                $(".mrpinput").hide()
+
+                $("button[name='search_submit_button']").click(function (e) {
+
+                    let searchInput = $('#search_input').val();
+                    $.ajax({
+                            url: `/search/fromAdminAllProducts`,
+                            method: 'post',
+                            data: {
+                              brand:searchInput,
+                              dest: ""
+                            },
+                            success: (result) => {
+                              if (result == "Model does not match!") {
+                                alert(result)
+                              } else {
+                                $('tbody').empty()
+                                result.forEach(element => {
+                                    $('tbody').prepend(element)
+                                    $(".updateButton").hide()
+                                    $(".mrpinput").hide()
+                                });  
+                              }
+                                                              
+                            }
+                        })
+                });
+            
+                // updateButton/editButton
+                $(`.editButton`).click((e) => {
+                  let pid = e.target.getAttribute("pid")
+                  $(`button[name="${pid}updateButton"]`).show()
+                  $(`button[name="${pid}editButton"]`).hide()
+                  $(`.${pid}prvValue`).hide()
+                  $(`#${pid}mrp`).show()
+                  $(`#${pid}op`).show()
+
+                })
+
+                $(".updateButton").click((e) => {
+                  let pid = e.target.getAttribute("pid")
+                  let mrp = $(`#${pid}mrp`).val()
+                  let op = $(`#${pid}op`).val()
+                  $.ajax({
+                    url: "/updateMrp_",
+                    type: "post",
+                    data: {
+                      pid: pid,
+                      mrp: mrp,
+                      op: op
+                    },
+                    success: (data) => {
+                      $(`button[name="${pid}updateButton"]`).hide()
+                      $(`button[name="${pid}editButton"]`).show()
+                      $(`.${pid}prvMrp`).text(mrp)
+                      $(`.${pid}prvOp`).text(op)
+                      $(`#${pid}mrp`).hide()
+                      $(`#${pid}op`).hide()
+                      $(`.${pid}prvMrp`).show()
+                      $(`.${pid}prvOp`).show()
+                      $(`#${pid}row`).css("background-color", "green")
+                    }
+                  })
+                })
+            
+
+                $(`body`).on("click", '.editButton', (e) => {
+                  let pid = e.target.getAttribute("pid")
+                  $(`button[name="${pid}updateButton"]`).show()
+                  $(`button[name="${pid}editButton"]`).hide()
+                  $(`.${pid}prvValue`).hide()
+                  $(`#${pid}mrp`).show()
+                  $(`#${pid}op`).show()
+                })
+
+                $(`body`).on("click", '.updateButton', (e) => {
+                  let pid = e.target.getAttribute("pid")
+                  let mrp = $(`#${pid}mrp`).val()
+                  let op = $(`#${pid}op`).val()
+                  $.ajax({
+                    url: "/updateMrp_",
+                    type: "post",
+                    data: {
+                      pid: pid,
+                      mrp: mrp,
+                      op: op
+                    },
+                    success: (data) => {
+                      $(`button[name="${pid}updateButton"]`).hide()
+                      $(`button[name="${pid}editButton"]`).show()
+                      $(`.${pid}prvMrp`).text(mrp)
+                      $(`.${pid}prvOp`).text(op)
+                      $(`#${pid}mrp`).hide()
+                      $(`#${pid}op`).hide()
+                      $(`.${pid}prvMrp`).show()
+                      $(`.${pid}prvOp`).show()
+                      $(`#${pid}row`).css("background-color", "green")
+                    }
+                  })
+                })
+            
+                $("#generate").click(() => {
+                  let brand = $("#brand").val()
+                  let cat = $("#category").val()
+                  $.ajax({
+                            url: `/search/searchByBrandAndCategory`,
+                            method: 'post',
+                            data: {
+                              brand:brand,
+                              category:cat,
+                              dest: ""
+                            },
+                            success: (result) => {
+                              if (result == "Model does not match!") {
+                                alert(result)
+                              } else {
+                                $('tbody').empty()
+                                result.forEach(element => {
+                                    $('tbody').prepend(element)
+                                    $(".updateButton").hide()
+                                    $(".mrpinput").hide()
+                                });  
+                              }
+                                                              
+                            }
+                        })
+                })
+              })
+
+        </script>
+</body>

@@ -1,0 +1,46 @@
+<body>
+  <div class="container mt-3 d-flex justify-content-center">
+    <h4>Product Static Report</h4>
+  </div>
+  <div class="container pb-4">
+    <a class="btn btn-outline-dark admin-button" style="margin-top: 58px;" href="/he2024admin">Admin Panel</a>
+  </div>
+  <div class="container d-flex justify-content-end p-2">
+    <h6>Total Product Uploaded : <%= locals.message[3] %></h6>
+  </div>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <th>Brand</th>
+        <th>Stock Report</th>
+      </thead>
+      <tbody>
+        <% if (locals.message !== null) {
+          let brand = message[0]
+          let category = message[1]
+          let qty = message[2] %>
+          
+          <% for (let i = 0; i < brand.length; i++) { const b = brand[i] %>
+            <tr>
+              <td style="font-weight: bolder;">
+                  <%= b %>
+                </td>
+           <%  for (let j = 0; j < category.length; j++) {
+              const c = message[1][j];
+              const q = qty[i][j]; %>
+                <td class="d-flex flex-column">
+                  <%= c + " : " + q %>
+                </td>
+          <% } %>
+          </tr> 
+        <% } } %>      
+      </tbody>
+    </table>
+  </div>
+      <script>
+        $(document).ready(() => {
+                
+        })
+
+        </script>
+</body>

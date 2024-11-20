@@ -1,53 +1,225 @@
-<header>
-  <!-- <div class="container-fluid f primary_contact_2 p-2">
-    <p><i class="fa fa-envelope"></i>&nbsp;<a class="text-info" style="text-decoration: none;"
-        href="mailto:toptechonlineshop.bd@gmail.com">toptechonlineshop.bd@gmail.com</a></p>
-    <p style="margin-top: -10px;"><i class="fa fa-phone"></i>&nbsp;<a class="text-info"
-        href="tel: +8801984701062">(+880) 1984-701062</a></p>
-        <div class="container d-flex justify-content-end">
-          <button name="myCart" type="button" class="btn btn-outline-dark btn-sm menu mt-1">
-            <span class="fab fa-opencart"></span> My cart
-          </button>
-        </div>
-  </div> -->
-  <div class="row p-2">
-    <div class="col">
-      <p class="p-2" style="border-radius: 20px;"><i class="fa fa-envelope"></i>&nbsp;<a class="text-info"
-        style="text-decoration: none;" href="mailto:hoqueelectronics@gmail.com">hoqueelectronics@gmail.com</a>
-      &nbsp;<i class="fa fa-phone"></i>&nbsp;<a class="text-info" href="tel:+8801984701062">(+880) 1984-701062</a></p>
-    </div>
-    <div class="col" id="topMyCart">
-      <div class="container d-flex justify-content-end">
-        <button id="myCart_1" name="myCart" type="button" class="btn btn-outline-dark btn-sm menu mt-1">
-          <span class="fab fa-opencart"></span> My cart
-        </button>
-        <a href="/mycart" id="myCart_2" type="button" class="btn btn-outline-dark btn-sm mt-1">
-          <span class="fab fa-opencart"></span> My cart
+<header style="background-color: #fff">
+  <div id="top"></div>
+  <div class="hideInPc">
+    <div class="container-fluid p-2 d-flex">
+      <div class="col">
+        <a name="contact" class="contact_txt hideInPc" style="text-decoration: none; color: #003471"
+          href="tel:+8801859441020"><i class="fa fa-phone" style="font-size: 20px; margin-top: 3px"></i>
         </a>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <a name="trackOrder" class="contact_txt hideInPc" style="text-decoration: none; color: #003471" href="/mycart"><i
+            style="text-decoration: none; font-size: 20px" class="fab fa-opencart" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <img height="200px" width="auto" src="/img/logo.png" alt="Logo" style="margin-top: -60px;"/>
+    </div>
+    <div class="" id="HomeNavbar">
+      <ul class="nav d-flex justify-content-center" id="HomeNavbarUl">
+        <li class="nav-item">
+          <a style="font-size: 13px" class="nav-link tdn" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a style="font-size: 13px" class="nav-link tdn" href="/gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a style="font-size: 13px" class="nav-link tdn" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div id="mobileMenuBar">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="searchDiv_2">
+          <div class="container-fluid mt-1">
+            <form action="/search" method="post">
+              <div class="input-group">
+                <input
+                  id="search_input"
+                  name="search_input"
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Products"
+                />
+                <div class="input-group-append">
+                  <button
+                    name="search_submit_button"
+                    class="btn btn-outline-dark"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <a class="menu" href="#" name="REF" id="REF" style="font-size: 13px">Refrigerators</a>
+        <a class="menu" style="font-size: 13px" href="#" name="LED" id="LED">LED TV</a>
+        <a class="menu" style="font-size: 13px" href="#" name="WM" id="WM">Washing
+          Machine</a>
+        <a class="menu" style="font-size: 13px" href="#" name="AC" id="AC">Air Conditioner</a>
+        <a class="menu" style="font-size: 13px" href="#" name="HAP"
+          id="HAP">Home Appliance</a>
+        <a class="menu" style="font-size: 13px" href="#" name="KAP" id="KAP">Kitchen
+          Appliance</a>
+        <a class="menu" style="font-size: 13px" href="/mycart" name="myCart">
+          My cart</a>
+          
+        <div id="mobileMenuBarDetailsDiv" class="bg-light">
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsRef">
+            <a style="font-size: 13px" class="search" href="/search/French Door Refrigerators">French Door
+              Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Side by Side Refrigerators">
+              Side by Side Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Base Freezer Refrigerators">Base Freezer
+              Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Top Freezer Refrigerators">Top-Freezer
+              Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Mini Refrigerators">Mini Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Bar Refrigerators">Bar Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Business Refrigerators">Business Refrigerators</a>
+            <a style="font-size: 13px" class="search" href="/search/Direct cool refrigerator">Direct cool
+              refrigerator</a>
+            <a style="font-size: 13px" class="search" href="/search/Non Frost refrigerator">Non Frost refrigerator</a>
+            <a style="font-size: 13px" class="search" href="/search/Beverage Cooler">Beverage Cooler</a>
+            <a style="font-size: 13px" class="search" href="/search/all/Refrigerator">All Refrigerators</a>
+          </div>
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsTV">
+            <a style="font-size: 13px" class="search" href="/search/Basic TV">Basic TV</a>
+            <a style="font-size: 13px" class="search" href="/search/Smart LED TV">Smart LED TV</a>
+            <a style="font-size: 13px" class="search" href="/search/4K Ultra HD TV">4K Ultra HD TV</a>
+            <a style="font-size: 13px" class="search" href="/search/4K Ultra HD TV">4K Ultra HD TV</a>
+            <a style="font-size: 13px" class="search" href="/search/Android LED TV">Android LED TV</a>
+            <a style="font-size: 13px" class="search" href="/search/TV Accessories">TV Accessories</a>
+            <a style="font-size: 13px" class="search" href="/search/all/Television">All Television</a>
+          </div>
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsWM">
+            <a style="font-size: 13px" class="search" href="/search/Front Loading">Front Loading</a>
+            <a style="font-size: 13px" class="search" href="/search/Top Loading">Top Loading</a>
+            <a style="font-size: 13px" class="search" href="/search/all/Washing Machine">All Washing Machine</a>
+          </div>
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsAC">
+            <a style="font-size: 13px" class="search" href="/search/Inverter AC">Inverter AC</a>
+            <a style="font-size: 13px" class="search" href="/search/Non Inverter AC">Non Inverter AC</a>
+            <a style="font-size: 13px" class="search" href="/search/Cassette Type AC">Cassette Type AC</a>
+            <a style="font-size: 13px" class="search" href="/search/Ceiling Type AC">Ceiling Type AC</a>
+            <a style="font-size: 13px" class="search" href="/search/all/Air Conditioner">All AC</a>
+          </div>
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsHAP">
+            <a style="font-size: 13px" class="search" href="/search/Air Cooler">Air Cooler</a>
+            <a style="font-size: 13px" class="search" href="/search/Geyser">Geyser</a>
+            <a style="font-size: 13px" class="search" href="/search/Kettle">Kettle</a>
+            <a style="font-size: 13px" class="search" href="/search/Room Heater">Room Heater</a>
+            <a style="font-size: 13px" class="search" href="/search/Mosquito Bat">Mosquito Bat</a>
+            <a style="font-size: 13px" class="search" href="/search/Trimmer, Shaver & Hair Clipper">Trimmer, Shaver &
+              Hair Clipper</a>
+            <a style="font-size: 13px" class="search" href="/search/Iron">Iron</a>
+            <a style="font-size: 13px" class="search" href="/search/Sewing Machine">Sewing Machine</a>
+            <a style="font-size: 13px" class="search" href="/search/Voltage Stabilizer & Protector">Voltage Stabilizer &
+              Protector</a>
+            <a style="font-size: 13px" class="search" href="/search/Water Purifier & Dispenser">Water Purifier &
+              Dispenser</a>
+            <a style="font-size: 13px" class="search" href="/search/Toaster, Cake & Sandwich Maker">Toaster, Cake &
+              Sandwich Maker</a>
+            <a style="font-size: 13px" class="search" href="/search/Rechargable Lamp & Torch">Rechargable Lamp &
+              Torch</a>
+          </div>
+          <div class="mobileMenuBarDetails mobileMenuBarDetailsKAP">
+            <a style="font-size: 13px" class="search" href="/search/Gas Stove">Gas Stove</a>
+            <a style="font-size: 13px" class="search" href="/search/Rice Cooker">Rice Cooker</a>
+            <a style="font-size: 13px" class="search" href="/search/Grinder">Grinder</a>
+            <a style="font-size: 13px" class="search" href="/search/Induction, Infrared & Hot Plate Cooker">Induction,
+              Infrared & Hot Plate Cooker</a>
+            <a style="font-size: 13px" class="search" href="/search/Roti Maker">Roti Maker</a>
+            <a style="font-size: 13px" class="search" href="/search/Blender">Blender</a>
+            <a style="font-size: 13px" class="search" href="/search/Pressure Cooker">Pressure Cooker</a>
+            <a style="font-size: 13px" class="search" href="/search/Multi Cooker">Multi Cooker</a>
+            <a style="font-size: 13px" class="search" href="/search/Blender">Kitchen Hood</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Use any element to open the sidenav -->
+      <span class="p-3" onclick="openNav()"><i class="fas fa-bars"
+          style="font-size: 24px; cursor: pointer; padding-top: 10px" data-toggle="tooltip" data-placement="right"
+          title="Product Manu"></i></span>
+    </div>
+    <!-- <div id="searchDiv_2">
+      <div class="row f d-flex justify-content-center mt-2" style="padding: 15px;">
+        <form action="/search" method="post">
+          <div class="input-group">
+            <input
+              id="search_input"
+              name="search_input"
+              type="text"
+              class="form-control"
+              placeholder="Search Products"
+            />
+            <div class="input-group-append">
+              <button
+                name="search_submit_button"
+                class="btn btn-outline-dark"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div> -->
+  </div>
+  <div class="container-fluid hideInMobile">
+    <div class="row d-flex justify-content-between">
+      <div class="col-sm">
+        <div id="fixedTopDiv">
+          <nav class="navbar d-flex justify-content-end fixed-top">
+            <a id="goToTop" href="#top" class="btn btn-outline-dark" data-toggle="tooltip" data-placement="left" title="Go to top!"><i class='fas fa-angle-double-up arrowButton' style='font-size:10px;'></i></a>
+          </nav>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <p style="margin: 5px 13px 0px 0px;">
+          <i class="fa fa-phone"></i>&nbsp;
+          <a name="contact" class="contact_txt" style="text-decoration: none; color: black"
+            href="tel:+8801859441020">(+880) 1859-441020
+          </a>
+        </p>
+        <p style="padding-right: 15px; margin: 0px 30px 0px 0px;">
+          <i style="text-decoration: none" class="fa fa-map-marker mt-2" aria-hidden="true"></i>&nbsp;
+          <a name="location" class="contact_txt" style="text-decoration: none; color: black" href="/contact">Store
+            Location</a>
+        </p>
+        <!-- <p class="mt-2" style="padding-right: 10px">
+          <i style="text-decoration: none" class="fab fa-bitcoin mt-2" aria-hidden="true"></i>&nbsp;&nbsp;<a
+            name="dealership" class="contact_txt" style="text-decoration: none; color: black"
+            href="/dealership">Dealership</a>
+        </p>
+        <p class="mt-2" style="padding-right: 10px">
+          <i style="text-decoration: none" class="fab fa-opencart mt-2" aria-hidden="true"></i>&nbsp;&nbsp;<a
+            name="trackOrder" class="contact_txt" style="text-decoration: none; color: black" href="#">Track Your
+            Order</a>
+        </p> -->
       </div>
     </div>
   </div>
-  <!-- <div class="container primary_contact_1 p-1 f">
-    <p class="p-2" style="border-radius: 20px;"><i class="fa fa-envelope"></i>&nbsp;<a class="text-info"
-        style="text-decoration: none;" href="mailto:toptechonlineshop.bd@gmail.com">toptechonlineshop.bd@gmail.com</a>
-      &nbsp;<i class="fa fa-phone"></i>&nbsp;<a class="text-info" href="tel:+8801984701062">(+880) 1984-701062</a></p>
-  </div> -->
-  
-  <div class="container-fluid" id="top">
-    <div class="row p-2">
-      <div class="col-sm">
-        <img class="logo" src="/img/logo.png" alt="Logo">
+  <div class="container-fluid hideInMobile">
+    <div class="row pb-3">
+      <div class="col-sm" id="logoDiv">
+        <img height="120px" width="auto" src="/img/logo.png" alt="Electronics" />
       </div>
       <div class="col f d-flex justify-content-center" id="HomeNavbar">
         <ul class="nav" id="HomeNavbarUl">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link tdn" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/gallery">Gallery</a>
+            <a class="nav-link tdn" href="/gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link tdn" href="/contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -55,9 +227,12 @@
         <form action="/search" method="post">
           <div class="container sticky" id="searchDiv_1">
             <div class="input-group">
-              <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
+              <input id="search_input" name="search_input" type="text" class="form-control"
+                placeholder="Search Products" />
               <div class="input-group-append">
-                <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
+                <button name="search_submit_button" class="btn btn-outline-dark" type="submit">
+                  Search
+                </button>
               </div>
             </div>
           </div>
@@ -65,44 +240,42 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid f" id="searchDiv_2">
-    <div class="container-fluid f d-flex justify-content-center mb-4">
-      <form action="/search" method="post">
-          <div class="input-group">
-            <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
-            <div class="input-group-append">
-              <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
-            </div>
-          </div>
-      </form>
-    </div>
-  </div>
-  <div class="container-fluid p0" id="productNavbarDiv">
+
+  <div class="container-fluid p0 hideInMobile" id="productNavbarDiv">
     <div class="container-fluid" id="productNavbar">
-      <div class="container-fluid d-flex justify-content-center">
-        <nav class="navbar navbar-expand-sm navbar-dark">
+      <div class="container-fluid d-flex">
+        <nav class="navbar navbar-expand-sm">
           <!-- Toggler/collapsibe Button -->
-          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_2">
+          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar_2">
             <span class="navbar-toggler-icon"></span>
           </button>
-    
+
           <!-- Navbar links -->
           <div class="collapse navbar-collapse" id="collapsibleNavbar_2">
-            <ul class="navbar-nav text-light">
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="laptop" id="laptop">REFRIGERATOR</a>
+                <a class="btn btn-outline-light btn-sm menu mt-1" href="#" name="laptop" id="laptop">Refrigerators</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="laptopAccessories" id="laptopAccessories">LED TV</a>
+                <a class="btn btn-outline-light btn-sm menu mt-1 ml-3" href="#" name="laptopAccessories"
+                  id="laptopAccessories">LED TV</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="computerAccessories" id="computerAccessories">WASHING MACHINE</a>
+                <a class="btn btn-outline-light btn-sm menu mt-1 ml-3" href="#" name="computerAccessories"
+                  id="computerAccessories">Washing Machine</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="gamingDevices" id="gamingDevices">AIR CONDITIONER</a>
+                <a class="btn btn-outline-light btn-sm menu mt-1 ml-3" href="#" name="gamingDevices"
+                  id="gamingDevices">Air Conditioner</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="AppleMacBookAccessories" id="AppleMacBookAccessories">HOME APPLIANCE</a>
+                <a class="btn btn-outline-light btn-sm menu mt-1 ml-3" href="#" name="AppleMacBookAccessories"
+                  id="AppleMacBookAccessories">Home Appliance</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-outline-light btn-sm menu mt-1 ml-3" href="#" name="KitchenAppliance"
+                  id="KitchenAppliance">Kitchen Appliance</a>
               </li>
               <li class="nav-item" id="bottomMyCart">
                 <button name="myCart" type="button" class="btn btn-outline-light btn-sm menu mt-1">
@@ -119,181 +292,226 @@
       <div class="container-fluid d-flex justify-content-center" id="navSrink">
         <nav class="navbar navbar-expand-sm navbar-dark">
           <!-- Toggler/collapsibe Button -->
-          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_2">
+          <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar_2">
             <span class="navbar-toggler-icon"></span>
           </button>
-    
+
           <!-- Navbar links -->
           <div class="collapse navbar-collapse" id="collapsibleNavbar_2">
-            <ul class="navbar-nav text-light">
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="laptop" id="laptop">LAPTOPS</a>
+                <a class="nav-link nav-font menu" href="#" name="laptop" id="laptop">REFRIGERATOR</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="laptopAccessories" id="laptopAccessories">LAPTOPS
+                <a class="nav-link nav-font menu" href="#" name="laptopAccessories" id="laptopAccessories">LED TV
                   ACCESSORIES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="computerAccessories" id="computerAccessories">COMPUTER HARDWARE</a>
+                <a class="nav-link nav-font menu" href="#" name="computerAccessories" id="computerAccessories">WASHING
+                  MACHINE</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="gamingDevices" id="gamingDevices">GAMING</a>
+                <a class="nav-link nav-font menu" href="#" name="gamingDevices" id="gamingDevices">AIR CONDITIONER</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-font menu" href="#" name="AppleMacBookAccessories" id="AppleMacBookAccessories">APPLE MACBOOK ACCESSORIES</a>
+                <a class="nav-link nav-font menu" href="#" name="AppleMacBookAccessories"
+                  id="AppleMacBookAccessories">HOME APPLIANCE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-font menu" href="#" name="KitchenAppliance" id="KitchenAppliance">KITCHEN
+                  APPLIANCE</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
     </div>
-    <div class="container-fluid" id="productsMenu" style="background-color: #D6DBDF;">
+    <div class="container-fluid" id="productsMenu">
       <div class="container">
         <div class="row subMenus p-3" id="laptopMenu">
           <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/brand/Dell/Laptop">Dell</a></li>
-              <li><a class="search" href="/search/brand/Hp/Laptop">Hp</a></li>
-              <li><a class="search" href="/search/brand/Lenovo/Laptop">Lenovo</a></li>
-            </ul>
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/nav_img.webp" alt="Refrigerators" />
           </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/brand/Asus/Laptop">Asus</a></li>
-              <li><a class="search" href="/search/brand/Acer/Laptop">Acer</a></li>
-              <li><a class="search" href="/search/brand/Apple/Laptop">Apple</a></li>
+          <div class="col-sm ml-5">
+            <ul class="mt-2">
+              <li>
+                <a class="search" href="/search/French Door Refrigerators">French Door Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Side by Side Refrigerators">
+                  Side by Side Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Base Freezer Refrigerators">Base Freezer Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Top Freezer Refrigerators">Top-Freezer Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Mini Refrigerators">Mini Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Bar Refrigerators">Bar Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Business Refrigerators">Business Refrigerators</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Direct cool refrigerator">Direct cool refrigerator</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Non Frost refrigerator">Non Frost refrigerator</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Beverage Cooler">Beverage Cooler</a>
+              </li>
+              <li>
+                <a class="search" href="/search/all/Refrigerator">All Refrigerators</a>
+              </li>
             </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/brand/Samsung/Laptop">Samsung</a></li>
-              <li><a class="search" href="/search/brand/Intel/Laptop">Intel</a></li>
-              <li><a class="search" href="/search/brand/HUAWEI/Laptop">HUAWEI</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/brand/Toshiba/Laptop">Toshiba</a></li>
-              <li><a class="search" href="/search/brand/Walton/Laptop">Walton</a></li>
-              <li><a class="search" href="/search/brand/China/Laptop">China</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <img class="img-fluid" src="/img/banner/laptopGif.gif" alt="Laptop">
           </div>
         </div>
         <div class="row subMenus p-3" id="laptopAccessoriesMenu">
           <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Laptop Motherboard">Laptop Motherboard</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Storage Devices">Laptop Storage Devices</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Battery">Laptop CMOS/RTC Battery</a></li>
-            </ul>
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/ledtv.jpg" alt="TV" />
           </div>
           <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Laptop Internal WIFI">Laptop Internal WIFI</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Stand">Laptop Hinges/Stand</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Keypad">Laptop Keypad</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Laptop Palmrest">Laptop Palmrest</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Display">Laptop Touch Screen/Display</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Adapter">Laptop Adapter</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Laptop RAM">Laptop RAM</a></li>
-              <li><a class="search" href="/search/accessories/Laptop Processor">Laptop Processor</a></li>
-              <li><a class="search" href="/search/accessories/Laptop DC Power Port">Laptop DC Power Port/Jack</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Laptop Daughterboard">Laptop Daughterboard</a></li>
-              <li><a class="search" href="/search/accessories/Laptop HDD SSD">Laptop HDD/SSD</a></li>
-              <li><a class="search" href="/search/accessories/Laptop accessories">Other Accessories</a></li>
+            <ul class="mt-3">
+              <li><a class="search" href="/search/Basic TV">Basic TV</a></li>
+              <li>
+                <a class="search" href="/search/Smart LED TV">Smart LED TV</a>
+              </li>
+              <li>
+                <a class="search" href="/search/4K Ultra HD TV">4K Ultra HD TV</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Android LED TV">Android LED TV</a>
+              </li>
+              <li>
+                <a class="search" href="/search/TV Accessories">TV Accessories</a>
+              </li>
+              <li>
+                <a class="search" href="/search/all/Television">All Television</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="row subMenus p-3" id="computerAccessoriesMenu">
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Computer Motherboard">Computer Motherboard</a></li>
-              <li><a class="search" href="/search/accessories/Computer CPU">Central Processing Unit (CPU)</a></li>
-              <li><a class="search" href="/search/accessories/Computer Processor">Computer Processor</a></li>
-              
-            </ul>
+          <div class="col-sm text-center">
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/wm.png" alt="Washing Machine" />
           </div>
           <div class="col-sm">
             <ul>
-              <li><a class="search" href="/search/accessories/Computer RAM">Computer RAM</a></li>
-              <li><a class="search" href="/search/accessories/Computer VGA">Computer VGA Card</a></li>
-              <li><a class="search" href="/search/accessories/Computer Keyboard">Computer Keyboard</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Computer Mouse">Computer Mouse</a></li>
-              <li><a class="search" href="/search/accessories/Computer Monitor">Computer Monitor</a></li>
-              <li><a class="search" href="/search/accessories/Computer Cable">Computer VGA/Power Cables</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Computer HDD">Computer HDD</a></li>
-              <li><a class="search" href="/search/accessories/Computer UPS">Computer UPS</a></li>
-              <li><a class="search" href="/search/accessories/Computer SSD">Solid-State Drive (SSD)</a></li>
+              <li>
+                <a class="search" href="/search/Front Loading">Front Loading</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Top Loading">Top Loading</a>
+              </li>
+              <li>
+                <a class="search" href="/search/all/Washing Machine">All Washing Machine</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="row subMenus p-3" id="gamingDevicesMenu">
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Gaming PC">Gaming PC</a></li>
-              <li><a class="search" href="/search/Laptop/Gaming Laptop">Gaming Laptop</a></li>
-              <li><a class="search" href="/search/accessories/Gaming PC Handset">Gaming Headset</a></li>
-            </ul>
-            
+          <div class="col-sm text-center">
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/ac.png" alt="Air Conditioner" />
           </div>
           <div class="col-sm">
             <ul>
-              <li><a class="search" href="/search/accessories/Gaming Monitor">High-Resolution Gaming Monitor</a></li>
-              <li><a class="search" href="/search/accessories/Gaming CPU">Gaming (CPU)</a></li>
-              <li><a class="search" href="/search/accessories/Gaming Mouse">RGB Gaming Mouse</a></li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li><a class="search" href="/search/accessories/Gaming Keyboard">Gaming Keyboard</a></li>
-              <li><a class="search" href="/search/accessories/Gaming Controller">Bluetooth Gaming Controller</a></li>
-              <li><a class="search" href="/search/accessories/Gaming Webcam">4K Gaming Webcam</a></li>
+              <li>
+                <a class="search" href="/search/Inverter AC">Inverter AC</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Non Inverter AC">Non Inverter AC</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Cassette Type AC">Cassette Type AC</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Ceiling Type AC">Ceiling Type AC</a>
+              </li>
+              <li>
+                <a class="search" href="/search/all/Air Conditioner">All AC</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="row subMenus p-3" id="AppleMacBookAccessoriesMenu">
+          <div class="col-sm text-center">
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/hap.jpg" alt="Kitchen Appliance" />
+          </div>
           <div class="col-sm">
             <ul>
-              <li><a class="search" href="/search/accessories/Apple MacBook SSD">Apple MacBook SSD</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook Battery">Apple MacBook Battery</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook Display">Apple MacBook Display/Screen</a></li>
+              <li>
+                <a class="search" href="/search/Air Cooler">Air Cooler</a>
+              </li>
+              <li><a class="search" href="/search/Geyser">Geyser</a></li>
+              <li><a class="search" href="/search/Kettle">Kettle</a></li>
+              <li>
+                <a class="search" href="/search/Room Heater">Room Heater</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Mosquito Bat">Mosquito Bat</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Trimmer, Shaver & Hair Clipper">Trimmer, Shaver & Hair Clipper</a>
+              </li>
             </ul>
           </div>
           <div class="col-sm">
             <ul>
-              <li><a class="search" href="/search/accessories/Apple MacBook Keyboard">Apple MacBook Keyboard</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook RAM">Apple MacBook RAM</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook Power Adapter">Apple MacBook Power Adapter</a></li>
+              <li><a class="search" href="/search/Iron">Iron</a></li>
+              <li>
+                <a class="search" href="/search/Water Purifier & Dispenser">Water Purifier & Dispenser</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Toaster, Cake & Sandwich Maker">Toaster, Cake & Sandwich Maker</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Rechargable Lamp & Torch">Rechargable Lamp & Torch</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Voltage Stabilizer & Protector">Voltage Stabilizer & Protector</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Sewing Machine">Sewing Machine</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row subMenus p-3" id="KitchenApplianceMenu">
+          <div class="col-sm">
+            <img class="img-fluid" style="max-height: 200px" src="/img/banner/kitchenApp.png" alt="Kitchen Appliance" />
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li><a class="search" href="/search/Gas Stove">Gas Stove</a></li>
+              <li>
+                <a class="search" href="/search/Rice Cooker">Rice Cooker</a>
+              </li>
+              <li><a class="search" href="/search/Grinder">Grinder</a></li>
+              <li>
+                <a class="search" href="/search/Induction, Infrared & Hot Plate Cooker">Induction, Infrared & Hot Plate
+                  Cooker</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Roti Maker">Roti Maker</a>
+              </li>
             </ul>
           </div>
           <div class="col-sm">
             <ul>
-              <li><a class="search" href="/search/accessories/Apple MacBook WIFI Card">Apple MacBook WIFI Card</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook Cooling Fan">Apple MacBook Cooling Fan</a></li>
-              <li><a class="search" href="/search/accessories/Apple MacBook Cable">Apple MacBook Cables</a></li>
+              <li><a class="search" href="/search/Blender">Blender</a></li>
+              <li>
+                <a class="search" href="/search/Pressure Cooker">Pressure Cooker</a>
+              </li>
+              <li>
+                <a class="search" href="/search/Multi Cooker">Multi Cooker</a>
+              </li>
+              <li><a class="search" href="/search/Blender">Kitchen Hood</a></li>
             </ul>
           </div>
         </div>
@@ -306,7 +524,6 @@
               <thead class="thead-dark text-center">
                 <tr>
                   <th>Product Code</th>
-                  <th>Product Name</th>
                   <th>Product Model</th>
                   <th>Brand</th>
                   <th>Qty</th>
@@ -315,112 +532,165 @@
                   <th>Remove items</th>
                 </tr>
               </thead>
-              <tbody class="text-center" id="cartItems">
-                
-              </tbody>
+              <tbody class="text-center" id="cartItems"></tbody>
             </table>
           </div>
           <div class="container d-flex justify-content-end">
-            <h5 class="m-3">Total Price: <span id="totalCartPrice" value="0"></span></h5>
-            <a href="/checkout" type="button" id="checkoutBtn" value="0" class="btn btn-outline-dark btn-sm m-3">Checkout</a>
+            <h5 class="m-3">
+              Total Price (BDT) - <span id="totalCartPrice" value="0"></span>
+            </h5>
+            <button id="checkoutBtn" onclick="checkout()" class="btn btn-outline-dark btn-sm m-3">
+              Checkout
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid mt-3 d-flex flex-wrap p0" id="displaySearchResult">
-    
-  </div>
-    
-
+  <div class="container-fluid mt-3 d-flex flex-wrap p0" id="displaySearchResult"></div>
+  
   <script>
-    $('#myCart_2').hide()
-    $(document).ready(() => {
-      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      if (window.innerWidth < 500) {
-        $('#HomeNavbar').removeClass('d-flex justify-content-center')
-        $('#HomeNavbarUl').removeAttr('style')
-        $('#HomeNavbarUl').css('margin-top', '20px')
-        $('#searchBar').removeAttr('style')
-        $('#searchDiv_1').removeAttr('style')
-        $('.primary_contact_1').hide()
-        $('.primary_contact_2').show()
-        $('.logo').css('height', '100px')
-        $('#productNavbar').removeClass('d-flex justify-content-center')
-        $('#filterDiv').hide()
-        $('#navSrink').removeClass('justify-content-center')
-        $('#navSrink').addClass('justify-content-start')
-        $('#myCart_1').hide()
-        $('#myCart_2').show()
+    $("#myCart_2").hide();
+    $("#fixedTopDiv").hide()
+    // document.getElementById('searchDiv_2').style.display = 'none';
+    document.addEventListener("scroll", () => {
+      if (window.pageYOffset < 300) {
+        $("#fixedTopDiv").hide()
+      } else {
+        $("#fixedTopDiv").show()
       }
-      $('.subMenus').hide()
+    })
+    
+    
+    $(document).ready(() => {
+      $("#mobileMenuBarDetailsDiv").hide()
+      $('[data-toggle="popover"]').popover();
+      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      if (window.innerWidth < 600) {
+        $("#HomeNavbar").removeClass("d-flex justify-content-center");
+        $("#HomeNavbarUl").removeAttr("style");
+        $("#HomeNavbarUl").css("margin-top", "20px");
+        $("#searchBar").removeAttr("style");
+        $("#searchDiv_1").removeAttr("style");
+        $(".primary_contact_1").hide();
+        $(".primary_contact_2").show();
+        $(".logo").css("height", "100px");
+        $("#logoDiv").addClass("d-flex justify-content-center");
+        $("#productNavbar").removeClass("d-flex justify-content-center");
+        $("#filterDiv").hide();
+        $("#navSrink").removeClass("justify-content-center");
+        $("#navSrink").addClass("justify-content-start");
+        $("#myCart_1").hide();
+        $(".hideInMobile").hide();
+        $("#myCart_2").show();
+      } else {
+        $(".hideInPc").hide();
+        $("#searchDiv_2").hide();
+      }
+
+      $(".subMenus").hide();
       // $('#checkoutBtn').hide()
       // $('#priceHeading').hide()
 
-      $('.menu').click((e) => {
-        let name = e.target.getAttribute('name')
-        $('.subMenus').hide()
-        if (name == 'laptop') {
-            $('#laptopMenu').show(500)
-            $('#laptopMenu').mouseleave(() => {
-              $('#laptopMenu').hide(500)
-            })
-        } else if (name == 'laptopAccessories') {
-            $('#laptopAccessoriesMenu').show(500)
-            $('#laptopAccessoriesMenu').mouseleave(() => {
-              $('#laptopAccessoriesMenu').hide(500)
-            })
-        } else if (name == 'computerAccessories') {
-          $('#computerAccessoriesMenu').show(500)
-          $('#computerAccessoriesMenu').mouseleave(() => {
-              $('#computerAccessoriesMenu').hide(500)
-            })
-        } else if (name == 'gamingDevices') {
-          $('#gamingDevicesMenu').show(500)
-          $('#gamingDevicesMenu').mouseleave(() => {
-              $('#gamingDevicesMenu').hide(500)
-            })
-        } else if (name == 'AppleMacBookAccessories') {
-          $('#AppleMacBookAccessoriesMenu').show(500)
-          $('#AppleMacBookAccessoriesMenu').mouseleave(() => {
-              $('#AppleMacBookAccessoriesMenu').hide(500)
-            })
-        } else if (name == 'myCart') {
-          $('#cartItems').empty()
+      $(".menu").click((e) => {
+        let name = e.target.getAttribute("name");
+        if (name == "REF") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsRef").show()
+          $("#mobileMenuBarDetailsDiv").show()
+
+        } else if (name == "LED") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsTV").show()
+          $("#mobileMenuBarDetailsDiv").show()
+        } else if (name == "WM") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsWM").show()
+          $("#mobileMenuBarDetailsDiv").show()
+        } else if (name == "AC") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsAC").show()
+          $("#mobileMenuBarDetailsDiv").show()
+        } else if (name == "HAP") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsHAP").show()
+          $("#mobileMenuBarDetailsDiv").show()
+        } else if (name == "KAP") {
+          $(".mobileMenuBarDetails").hide()
+          $(".mobileMenuBarDetailsKAP").show()
+          $("#mobileMenuBarDetailsDiv").show()
+        }
+
+        $(".subMenus").hide();
+        if (name == "laptop") {
+          $("#laptopMenu").show(500);
+          $("#laptopMenu").mouseleave(() => {
+            $("#laptopMenu").hide(500);
+          });
+        } else if (name == "laptopAccessories") {
+          $("#laptopAccessoriesMenu").show(500);
+          $("#laptopAccessoriesMenu").mouseleave(() => {
+            $("#laptopAccessoriesMenu").hide(500);
+          });
+        } else if (name == "computerAccessories") {
+          $("#computerAccessoriesMenu").show(500);
+          $("#computerAccessoriesMenu").mouseleave(() => {
+            $("#computerAccessoriesMenu").hide(500);
+          });
+        } else if (name == "gamingDevices") {
+          $("#gamingDevicesMenu").show(500);
+          $("#gamingDevicesMenu").mouseleave(() => {
+            $("#gamingDevicesMenu").hide(500);
+          });
+        } else if (name == "AppleMacBookAccessories") {
+          $("#AppleMacBookAccessoriesMenu").show(500);
+          $("#AppleMacBookAccessoriesMenu").mouseleave(() => {
+            $("#AppleMacBookAccessoriesMenu").hide(500);
+          });
+        } else if (name == "KitchenAppliance") {
+          $("#KitchenApplianceMenu").show(500);
+          $("#KitchenApplianceMenu").mouseleave(() => {
+            $("#KitchenApplianceMenu").hide(500);
+          });
+        } else if (name == "myCart") {
+          $("#cartItems").empty();
           if (document.cookie) {
-        let decodedCookie = decodeURIComponent(document.cookie);
-                      let cartD = decodedCookie.slice(9);
-                      let ca = cartD.split('+');
-                      let tPrice = 0
-                      for (let i = 0; i < ca.length; i++) {
-                        const e = ca[i];
-                        let arr = e.split(',')
-                        let totalPrice = Number(arr[6])
-                        tPrice += totalPrice
-                        
-                        $('#cartItems').append(`
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cartD = decodedCookie.slice(9);
+            let ca = cartD.split("+");
+            let tPrice = 0;
+            for (let i = 0; i < ca.length; i++) {
+              const e = ca[i];
+              let arr = e.split(",");
+              let totalPrice = Number(arr[5]);
+              tPrice += totalPrice;
+              let up = Number(arr[4])
+              let cam = Number(arr[5])
+              cam = cam.toLocaleString('en-IN')
+              up = up.toLocaleString('en-IN')
+              $("#cartItems").append(`
                           <tr remove="${arr[0]}">
                             <td>${arr[0]}</td>
                             <td>${arr[1]}</td>
                             <td>${arr[2]}</td>
-                            <td>${arr[3]}</td>
-                            <td><input onchange="calculate(this.value, ${arr[5]}, ${arr[0]})" type='number' value="${arr[4]}" min="1"/></td>
-                            <td>${arr[5]}</td>
-                            <td cAmount="${arr[0]}">${arr[6]}</td>
+                            <td><input onchange="calculate(this.value, ${arr[4]}, ${arr[0]})" type='number' value="${arr[3]}" min="1"/></td>
+                            <td>${up}</td>
+                            <td cAmount="${arr[0]}">${cam}</td>
                             <td><button onclick="removeCartItem(${arr[0]})" class="btn btn-outline-danger">Remove</button></td>
                           </tr>
-                        `)
-                      }
-                        $('#totalCartPrice').val(tPrice)
-                        $('#totalCartPrice').text(tPrice)
-                        $('#checkoutBtn').val(tPrice)
-      }
-          $('#myCartMenu').show(500)
-          $('#myCartMenu').mouseleave(() => {
-              $('#myCartMenu').hide(500)
-            })
+                        `);
+            }
+            tPrice = tPrice.toLocaleString('en-IN')
+            $("#totalCartPrice").val(tPrice);
+            $("#totalCartPrice").text(tPrice);
+            $("#checkoutBtn").val(tPrice);
+          }
+          $("#myCartMenu").show(500);
+          $("#myCartMenu").mouseleave(() => {
+            $("#myCartMenu").hide(500);
+          });
         }
-      })
+      });
 
       // $('button').click((e) => {
       //   let TargetName = e.target.getAttribute('name')
@@ -453,136 +723,210 @@
       //   }
 
       // })
+      // $(".contact_txt").mouseover((e) => {
+      //   let TargetName = e.target.getAttribute("name");
+      //   if (TargetName == "contact") {
+      //     $(`a[name="contact"]`).css("color", "#fc0303");
+      //   } else if (TargetName == "location") {
+      //     $(`a[name="location"]`).css("color", "#fc0303");
+      //   } else if (TargetName == "dealership") {
+      //     $(`a[name="dealership"]`).css("color", "#fc0303");
+      //   } else if (TargetName == "trackOrder") {
+      //     $(`a[name="trackOrder"]`).css("color", "#fc0303");
+      //   }
+      //   // $(".contact_txt").css("color", "#fc0303");
+      // });
+      $(".contact_txt").mouseout(() => {
+        $(".contact_txt").css("color", "black");
+      });
 
-      $('.addToCart').click((e) => {
-      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      $(".orderNow").click((e) => {
+        let u = e.target.getAttribute("price");
+        let unitPrice = u.replace(",", "");
+        let totalPrice = unitPrice.replace(",", "");
+        Number(totalPrice);
+        let brand = e.target.getAttribute("brand");
+        let PID = e.target.getAttribute("productid");
+        let qty = 1;
+        let model = e.target.getAttribute("model");
+        let data = [PID, model, brand, qty, unitPrice, totalPrice];
+        document.cookie = `cartData=${data};path=/;`;
+        let GrandAmount = data[5];
+        window.location.assign(`/checkout/${GrandAmount}`);
+      });
 
-                    let TargetName = e.target.getAttribute('name')
-                    let PT = e.target.getAttribute('productTitle')
-                    let unitPrice = e.target.getAttribute('price')
-                    let totalPrice = unitPrice;
-                    let brand = e.target.getAttribute('brand')
-                    let PID = e.target.getAttribute('productid')
-                    let qty = 1;
-                    let model = e.target.getAttribute('model')
-                    let data = [PID,PT,model,brand, qty, unitPrice, totalPrice]
-                    if (document.cookie) {
-                      // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                      let decodedCookie = decodeURIComponent(document.cookie);
-                      let cartD = decodedCookie.slice(9);
-                      let ca = cartD.split('+');
-                      for (let i = 0; i < ca.length; i++) {
-                        const e = ca[i];
-                        let arr = e.split(',')
-                        if (arr[0] == PID) {
-                          return alert("This item already added to your cart!")
-                        }
-                      }
-                        document.cookie = `cartData=${cartD + '+' + data};path=/;`;
-                        alert('Product added to your cart successfully!')
-                    } else {
-                      document.cookie = `cartData=${data};path=/;`;
-                      alert('Product added to your cart successfully!')
-                      // window.location.reload()
-                    }
-                        
-                })
-    
-})
+      $(".addToCart").click((e) => {
+        let u = e.target.getAttribute("price");
+        let unitPrice = u.replace(",", "");
+        let totalPrice = unitPrice.replace(",", "");
+        Number(totalPrice);
+        let brand = e.target.getAttribute("brand");
+        let PID = e.target.getAttribute("productid");
+        let qty = 1;
+        let model = e.target.getAttribute("model");
+        let data = [PID, model, brand, qty, unitPrice, totalPrice];
+        if (document.cookie) {
+          // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let cartD = decodedCookie.slice(9);
+          let ca = cartD.split("+");
+          for (let i = 0; i < ca.length; i++) {
+            const e = ca[i];
+            let arr = e.split(",");
+            if (arr[0] == PID) {
+              return alert("This item already added to your cart!");
+            }
+          }
+          document.cookie = `cartData=${cartD + "+" + data};path=/;`;
+          alert("Product added to your cart successfully!");
+        } else {
+          document.cookie = `cartData=${data};path=/;`;
+          alert("Product added to your cart successfully!");
+          // window.location.reload()
+        }
+      });
+      // $(`button[id="checkoutBtn"]`).click(() => {
+      //   let tcp = $("#totalCartPrice").val()
+      //   $.ajax({
+      //     url: "/checkout",
+      //     type: "POST",
+      //     data: {
+      //       tcp : tcp
+      //     }
+      //   })
+      // })
+    });
 
-function calculate(v, a, id) {
-  let val = Number(v)
-  let amount = Number(a)
-  let totalAmount = val * amount;
-  let GrandAmount = 0;
-  document.querySelectorAll(`td[cAmount='${id}']`)[0].innerHTML = totalAmount;
-  let decodedCookie = decodeURIComponent(document.cookie);
-                      let cartD = decodedCookie.slice(9);
-                      if (cartD.includes("+") == true) {
-                          let ca = cartD.split('+');
-                          let cookieData = [];
-                          
-                        for (let i = 0; i < ca.length; i++) {
-                          const e = ca[i];
-                          let arr = e.split(',')
-                          if (arr[0] == id) {
-                            arr[4] = val
-                            arr[6] = totalAmount
-                            let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                            GrandAmount+= totalAmount;
-                            if (i == 0) {
-                              cookieData.push(data)
-                            } else {
-                              cookieData.push('+' + data)
-                            }
-                          } else {
-                            let singleAmount = Number(arr[6])
-                            GrandAmount+= singleAmount;
-                            if (i == 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                              cookieData.push(data)
-                            } else {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                              cookieData.push('+' + data)
-                            }
-                          }
-                        }
-                        
-                        document.cookie = `cartData=${cookieData};path=/;`;
-                      } else {
-                        let arr = cartD.split(',')
-                        arr[4] = val
-                        arr[6] = totalAmount
-                        GrandAmount+= totalAmount;
-                        let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                        document.cookie = `cartData=${data};path=/;`;
-                      }
-                      
-                      
-                 document.getElementById('totalCartPrice').innerHTML = GrandAmount;   
-                 document.getElementById('totalCartPrice_2').innerHTML = GrandAmount;   
-}
+    // function showSearchBar() {
+    //   document.getElementById('searchDiv_2').style.display = 'block';
+    // }
 
- function removeCartItem(id) {
-  let pid = Number(id)
-  document.querySelectorAll(`tr[remove="${id}"]`)[0].remove()
-  
-  let decodedCookie = decodeURIComponent(document.cookie);
-                      let cartD = decodedCookie.slice(9);
-                      
-                      if (cartD.includes("+") == true) {
-                          let ca = cartD.split('+');
-                          let cookieData = [];
-                          let GrandAmount = 0;
-                        for (let i = 0; i < ca.length; i++) {
-                          const e = ca[i];
-                          let arr = e.split(',')
-                          let pidInArr = Number(arr[0])
-                          if (pid !== pidInArr) {
-                            let singleAmount = Number(arr[6]);
-                            GrandAmount+= singleAmount
-                            if (i == 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                              cookieData.push(data)
-                            } else if (cookieData.length > 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                              cookieData.push('+' + data)
-                            } else {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
-                              cookieData.push(data)
-                            }
-                          }
-                        }
-                        document.cookie = `cartData=${cookieData};path=/;`;
-                        document.getElementById('totalCartPrice').innerHTML = GrandAmount;  
-                      } else {
-                        document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                        document.getElementById('totalCartPrice').innerHTML = 0; 
-                      }
-                      
-                      
-                 
- }
- 
- </script>
+    function calculate(v, a, id) {
+      let val = Number(v);
+      let amount = Number(a);
+      let totalAmount = val * amount;
+      totalAmt = totalAmount.toLocaleString("en-IN")
+      let GrandAmount = 0;
+      document.querySelectorAll(`td[cAmount='${id}']`)[0].innerHTML = totalAmt;
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let cartD = decodedCookie.slice(9);
+      if (cartD.includes("+") == true) {
+        let ca = cartD.split("+");
+        let cookieData = [];
+
+        for (let i = 0; i < ca.length; i++) {
+          const e = ca[i];
+          let arr = e.split(",");
+          if (arr[0] == id) {
+            arr[3] = val;
+            arr[5] = totalAmount;
+            let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+            GrandAmount += totalAmount;
+            if (i == 0) {
+              cookieData.push(data);
+            } else {
+              cookieData.push("+" + data);
+            }
+          } else {
+            let singleAmount = Number(arr[5]);
+            GrandAmount += singleAmount;
+            if (i == 0) {
+              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+              cookieData.push(data);
+            } else {
+              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+              cookieData.push("+" + data);
+            }
+          }
+        }
+
+        document.cookie = `cartData=${cookieData};path=/;`;
+      } else {
+        let arr = cartD.split(",");
+        arr[3] = val;
+        arr[5] = totalAmount;
+        GrandAmount += totalAmount;
+        let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+        document.cookie = `cartData=${data};path=/;`;
+      }
+      GrandAmount = GrandAmount.toLocaleString("en-IN")
+      document.getElementById("totalCartPrice").innerHTML = GrandAmount;
+      document.getElementById("totalCartPriceInput").innerHTML = GrandAmount;
+      document.getElementById("totalCartPrice_2").innerHTML = GrandAmount;
+    }
+
+    function removeCartItem(id) {
+      let pid = Number(id);
+      document.querySelectorAll(`tr[remove="${id}"]`)[0].remove();
+
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let cartD = decodedCookie.slice(9);
+
+      if (cartD.includes("+") == true) {
+        let ca = cartD.split("+");
+        let cookieData = [];
+        let GrandAmount = 0;
+        for (let i = 0; i < ca.length; i++) {
+          const e = ca[i];
+          let arr = e.split(",");
+          let pidInArr = Number(arr[0]);
+          if (pid !== pidInArr) {
+            let singleAmount = Number(arr[5]);
+            GrandAmount += singleAmount;
+            if (i == 0) {
+              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+              cookieData.push(data);
+            } else if (cookieData.length > 0) {
+              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+              cookieData.push("+" + data);
+            } else {
+              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]];
+              cookieData.push(data);
+            }
+          }
+        }
+        document.cookie = `cartData=${cookieData};path=/;`;
+        document.getElementById("totalCartPrice").innerHTML = GrandAmount;
+      } else {
+        document.cookie =
+          "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.getElementById("totalCartPrice").innerHTML = 0;
+      }
+    }
+
+    function checkout() {
+      let decodedCookie = decodeURIComponent(document.cookie);
+      alert(decodedCookie)
+      let cartD = decodedCookie.slice(9);
+
+      if (cartD.includes("+") == true) {
+        let ca = cartD.split("+");
+        let cookieData = [];
+        let GrandAmount = 0;
+        for (let i = 0; i < ca.length; i++) {
+          const e = ca[i];
+          let arr = e.split(",");
+          let singleAmount = Number(arr[5]);
+          GrandAmount += singleAmount;
+        }
+        // document.getElementById("totalCartPriceInput").innerHTML = GrandAmount;
+        window.location.assign(`/checkout/${GrandAmount}`);
+      } else {
+        let c = cartD.split(",");
+        let GrandAmount = c[5];
+        window.location.assign(`/checkout/${GrandAmount}`);
+      }
+    }
+
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 </header>

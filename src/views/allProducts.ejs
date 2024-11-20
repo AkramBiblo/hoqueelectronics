@@ -1,30 +1,140 @@
 <body>
-    <div class="container p-3">
-        <a class="btn btn-light admin-button" href="/toptech2022admin">Admin Panel</a>
+  <div class="container mt-3 d-flex justify-content-center">
+    <h4>All Products</h4>
+  </div>
+    <div class="container-fluid d-flex flex-wrap p0" id="filterResult">
+    
     </div>
-        <div class="container-fluid d-flex flex-wrap p-3">
-                <% if (locals.message !== null) { message.forEach(function(product) { %> 
-                <!-- <div class="gallery border p-2 m-1 d-flex flex-wrap align-content-around" style="width:300px;"> -->
-                    <div class="gallery border p-2 m-1" style="width:270px;">
-                    <div class="container-fluid text-center">
-                        <h5><%= product.Title %></h5>
-                    </div>
-                    <div class="p-2">
-                        <a href="/details/<%= product.Id %>">
-                            <img src="/uploadedFiles/<%= product.File_1 %>" class="img-fluid rounded" code="<%= product.Id %>" height="300px" width="300px" alt="Product Image">
-                        </a>
-                    </div>
-                    <div class="col p-2">
-                            <p><strong>Product Code :</strong> <%= product.Id %></p>
-                            <p><strong>Brand :</strong> <%= product.Brand %></p>
-                            <p><strong>Model :</strong> <%= product.Model %></p>
-                            <p><strong>Description :</strong> <%= product.Description %></p>
-                            <p><strong>Price (BDT) :</strong> <%= product.Price %></p>
-                            <p><strong>Qty :</strong> <%= product.Qty %></p>
-                    </div>
-                </div>
-                <% })} %> 
-            
+    
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+            <div class="container pb-4">
+                <a class="btn btn-outline-dark admin-button" style="margin-top: 58px;" href="/he2024admin">Admin Panel</a>
+                <!-- <a class="btn btn-outline-dark admin-button" style="margin-top: 58px;" href="/productUploadForm">Product Upload Form</a> -->
+                <!-- <button class="btn btn-outline-dark admin-button" style="margin-top: 58px;" data-toggle="collapse" data-target="#demo">Search by Category</button> -->
+            </div>
         </div>
+        <div class="col">
+          <div class="container" id="searchDiv_1">
+            <div class="input-group">
+              <input id="search_input" name="search_input" type="text" class="form-control" placeholder="Search Products">
+              <div class="input-group-append">
+                <button name="search_submit_button" class="btn btn-info" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <%- include('./partials/successMsg.ejs') %>
+        <% if (locals.message != null) { %> 
+        <table class="table table-sm bg-dark text-light">
+          <thead class="thead-light">
+            <tr class="">
+              <th>Image</th>
+              <th>Id</th>
+              <th>Model</th>
+              <th>Category</th>
+              <th>Sub Category</th>
+              <th>Brand</th>
+              <th>MRP</th>
+              <th>Off. Price</th>
+              <th>Edit</th>
+              <th>Remove</th>
+              <th>Stock Out</th>
+            </tr>
+          </thead>
+          <tbody>
 
+            <% message.forEach(function(item) {%>
+              <tr>
+                  <td><img style="border-radius: 8px; max-height: 70px;max-width: 70px;" src="<%= item.display_img %>" alt="Image"></td>
+                  <td><%= item.id %></td>
+                  <% if (item.model.includes('Inch')) { let model = item.model.replace('Inch', '"') %>
+                      <td>
+                        <%= model %>
+                      </td>
+                      <% } else {%> <td>
+                        <%= item.model %>
+                      </td> <% } %>
+                  <td><%= item.category %></td>
+                  <td><%= item.sub_category %></td>
+                  <td><%= item.brand %></td>
+                  <td><%= item.mrp %></td>
+                  <td><%= item.offer_price %></td>
+                  <td>
+                    <form action="/edit" method="post">
+                      <input type="hidden" value="<%= item.id %>" name="edit_search_input">
+                      <button class="btn btn-outline-light" type="submit">Edit</button>
+                    </form>
+                  </td>
+                  <td>
+                    <form action="/removeProduct" method="post">
+                      <input type="hidden" value="<%= item.id %>" name="remove_search_input">
+                      <button class="btn btn-outline-light" type="submit">Remove</button>
+                    </form>
+                  </td>
+                  <% if (item.stock == "") {%>
+                  <td>
+                    <form action="/stockOut" method="post">
+                      <input type="hidden" value="<%= item.id %>" name="pid">
+                      <button class="btn btn-outline-danger" type="submit">Stock Out</button>
+                    </form>
+                  </td>
+                  <% } else { %>
+                    <td>
+                    <form action="/stockin" method="post">
+                      <input type="hidden" value="<%= item.id %>" name="pid">
+                      <button class="btn btn-outline-success" type="submit">Available</button>
+                    </form>
+                  </td>
+                 <% } %> 
+              </tr>
+             <% })} %> 
+          </tbody>
+        </table>
+      </div>
+
+      <script>
+        $(document).ready(() => {
+                $("button[name='search_submit_button']").click(function (e) {
+
+                    let searchInput = $('#search_input').val();
+                    let destination = "allProducts"
+                    $.ajax({
+                            url: `/search/fromAdminAllProducts`,
+                            method: 'post',
+                            data: {
+                              brand:searchInput,
+                              dest: destination
+                            },
+                            success: (result) => {
+                              if (result == "Model does not match!") {
+                                alert(result)
+                              } else {
+                                $('tbody').empty()
+                                result.forEach(element => {
+                                    $('tbody').prepend(element)
+                                });  
+                              }                             
+                            }
+                        })
+                });
+
+                
+
+            }
+          )
+
+        function FTGP_edit() {
+                    $(`#FTGP_edit`).html(`<input id="ChangeThis" type="text"><button onclick="FTGP_edit_change()">Change</button>`)
+                }
+
+                function FTGP_edit_change() {
+                    let val = $(`#ChangeThis`).val()
+                    $(`#FTGP_edit`).text(val)
+                }
+
+                `<span id="FTGP_edit"><span onclick="FTGP_edit()">Value</span></span>`
+        </script>
 </body>

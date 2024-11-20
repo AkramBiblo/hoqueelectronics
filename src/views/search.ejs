@@ -1,25 +1,69 @@
 <body>
     <%- include('./partials/header.ejs') %>
-    <div class="row">
-        <div id="filterDiv" class="col-3 text-light" style="background-color: black;">
+    <%- include('./partials/error.ejs') %>
+    <div class="container d-flex justify-content-center p-3">
+        <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#fbpr">Filter by price range</button>
+        <!-- <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#fbb">Filter by brand</button> -->
+    </div>
+        <div id="fbpr" class="collapse">
+            <div class="d-flex justify-content-center">
+                <div class="text-light" style="max-width: 300px; border-radius: 10px; background-color: black;">
+                    <div class="container-fluid" style="border: 0.5px solid black;border-radius:10px">
+                        <div class="container text-center mt-3">
+                            <h5 for="vol">Filter by price range</h5>
+                        </div>
+                        <hr>
+                        <form action="/search/filterbypricerange" method="Post" class="mt-4">
+                            <div class="container">
+                                <div class="container-fluid p0 ip mt-3">
+                                    <input type="text" class="form-control" placeholder="Product Name" name="model" required>
+                                </div>
+                                <div class="row ip mt-3">
+                                    <div class="col-lg-4 ip">
+                                        <h6><label for="rangeFrom">From : </label></h6>
+                                    </div>
+                                    <div class="col-lg-8 ip">
+                                        <input type="number" class="form-control" placeholder="1" name="rangeFrom" required>
+                                    </div>
+                                </div>
+                                <div class="row ip mt-3">
+                                    <div class="col-lg-4 ip">
+                                        <h6><label for="rangeTo">To :</label></h6>
+                                    </div>
+                                    <div class="col-lg-8 ip">
+                                        <input type="number" class="form-control" placeholder="100000" name="rangeTo" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container p-3 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-outline-light">
+                                    Filter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    <div class="row hideInMobile">
+        <!-- <div id="filterDiv" class="col-3 text-light" style="background-color: black;">
             <div class="container-fluid p-4 m-1 f" style="border: 0.5px solid black;border-radius:10px">
                 <div class="container text-center mt-3">
                     <h5 for="vol">Filter by price range</h5>
-                    
-                    <!-- ( &#2547;BDT ) -->
                 </div>
                 <hr>
                 <form action="/search/filterbypricerange" method="Post" class="mt-4">
                     <div class="container">
                         <div class="container-fluid p0 ip mt-3">
-                            <input type="text" class="form-control" placeholder="Product Name" name="title" required>
+                            <input type="text" class="form-control" placeholder="Product Name" name="model" required>
                         </div>
                         <div class="row ip mt-3">
                             <div class="col-lg-4 ip">
                                 <h6><label for="rangeFrom">From : </label></h6>
                             </div>
                             <div class="col-lg-8 ip">
-                                <input type="text" class="form-control" placeholder="1" name="rangeFrom" required>
+                                <input type="number" class="form-control" placeholder="1" name="rangeFrom" required>
                             </div>
                         </div>
                         <div class="row ip mt-3">
@@ -27,7 +71,7 @@
                                 <h6><label for="rangeTo">To :</label></h6>
                             </div>
                             <div class="col-lg-8 ip">
-                                <input type="text" class="form-control" placeholder="100000" name="rangeTo" required>
+                                <input type="number" class="form-control" placeholder="100000" name="rangeTo" required>
                             </div>
                         </div>
                     </div>
@@ -45,86 +89,109 @@
                     <div class="container-fluid mt-3" id="filterDiv-1">
                         <form action="#" method="get">
                             <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="dell"> &nbsp;&nbsp; Dell
+                                <input type="checkbox" class="filterByBrand" name="Samsung"> &nbsp;&nbsp; Samsung
                             </div>
                             <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="hp"> &nbsp;&nbsp; Hp
+                                <input type="checkbox" class="filterByBrand" name="Walton"> &nbsp;&nbsp; Walton
                             </div>
                             <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="asus"> &nbsp;&nbsp; Asus
+                                <input type="checkbox" class="filterByBrand" name="Vision"> &nbsp;&nbsp; Vision
                             </div>
                             <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="apple"> &nbsp;&nbsp; Apple
+                                <input type="checkbox" class="filterByBrand" name="Singer"> &nbsp;&nbsp; Singer
                             </div>
                             <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="samsung"> &nbsp;&nbsp; Samsung
-                            </div>
-                            <div class="container">
-                                <input type="checkbox" class="filterByBrand" name="microsoft"> &nbsp;&nbsp; Microsoft
+                                <input type="checkbox" class="filterByBrand" name="Konka"> &nbsp;&nbsp; Konka
                             </div>
                         </form>
-                    </div>
-                
-                    <div id="accordion" class=" text-dark mt-3">
-                        <div class="card">
-                          <div class="card-header text-center">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne" id="showlist">
-                              Show full list
-                            </a>
-                          </div>
-                          <div id="collapseOne" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="container-fluid" id="brandFilterForm">
-                                    
-                                </div>
-                            </div>
-                          </div>
-                        </div>
                     </div>
             </div>
             </div>
             
-        </div>
+        </div> -->
         <div class="col">
-            <div class="container-fluid d-flex flex-wrap" id="filterResult">
-
-            </div>
-            <div class="container-fluid d-flex flex-wrap" id="renderProdDiv">
-                <% if (locals.message) { %> 
-                    <!-- <div class="container d-flex flex-wrap justify-content-center"> -->
-                        <% if (locals.message !== null) { message.forEach(function(product) { %> 
-                        <!-- <div class="gallery border p-2 m-1 d-flex flex-wrap align-content-around" style="width:300px;"> -->
-                            <div class="gallery border p-2 m-1" style="width:500px;">
-                            <div class="container-fluid text-center">
-                                <h5><%= product.Title %></h5>
-                            </div>
-                            <div class="p-2">
-                                <a href="/details/<%= product.Id %>">
-                                    <img src="/uploadedFiles/<%= product.File_1 %>" class="img-fluid rounded" code="<%= product.Id %>" height="500px" width="500px" alt="Product Image">
-                                </a>
-                            </div>
-                            <div class="col p-2">
-                                <p><strong>Product Code :</strong> <%= product.Id %></p>
-                                <p><strong>Brand :</strong> <%= product.Brand %></p>
-                                <p><strong>Model :</strong> <%= product.Model %></p>
-                                <p><strong>Description :</strong> <%= product.Description %></p>
-                                <p><strong>Price (BDT) :</strong> <%= product.Price %></p>
-                                <p><strong>Qty :</strong> <%= product.Qty %></p>
-                                <button type="submit" name="addToCart" productid="<%= product.Id %>" brand="<%= product.Brand %>" productTitle="<%= product.Title %>" model="<%= product.Model %>" price="<%= product.Price %>" class="btn btn-outline-dark btn-sm addToCart">
-                                    <span class="fab fa-opencart"></span> Add to cart
-                                </button>
+            <!-- <div class="container-fluid d-flex flex-wrap justify-content-center" id="filterResult"></div> -->
+            <div class="container-fluid d-flex flex-wrap justify-content-center p-3">
+                <% if (locals.message) { message.forEach(function(product) { %>
+            
+                    <div class="container-fluid text-center border imgHoverEffect p-2 m-2 product"
+                        style="max-width: 330px;cursor: pointer;" productId="<%= product.id %>">
+                        <div class="container-fluid" productId="<%= product.id %>">
+                            <h6 style="color:#0d69d3;cursor: pointer;" productId="<%= product.id %>"><strong
+                                    productId="<%= product.id %>">
+                                    <% if (product.model.includes('Inch')) { let model=product.model.replace('Inch', '"' ) %>
+                                        <%= model %>
+                                            <% } else {%>
+                                                <%= product.model %>
+                                                    <% } %>
+                                </strong></h6>
+                        </div>
+                        <div class="container-fluid" productId="<%= product.id %>">
+                            <img src="<%= product.display_img %>" alt="Product Image" height="auto" width="150px"
+                                productId="<%= product.id %>" />
+                        </div>
+                        <div class="container-fluid mt-2" productId="<%= product.id %>">
+                            <div class="row" productId="<%= product.id %>">
+                                <div class="col" productId="<%= product.id %>">
+                                    <h6 style="color:#0d69d3" productId="<%= product.id %>">Tk.<del>
+                                            <%= product.mrp %>
+                                        </del>
+                                    </h6>
+                                </div>
+                                <div class="col" productId="<%= product.id %>">
+                                    <h6 style="color:#0d69d3" productId="<%= product.id %>">Tk.<%= product.offer_price %>
+                                    </h6>
+                                </div>
                             </div>
                         </div>
-                        <% })} %> 
-                    <!-- </div> -->
-                <% } else { %>
-                    <%- include('./partials/error.ejs') %>
-                    <% } %> 
+                    </div>
+                    <% })} %>
+                    
             </div>
            
         </div>
     </div>
-
+    
+    <div class="hideInPc">
+        <div class="d-flex justify-content-center flex-wrap p-1">
+            <% if (locals.message) { message.forEach(function(product) { %>
+        
+                <div class="container-fluid text-center border imgHoverEffect p-2 m-2 product"
+                    style="max-width: 330px;cursor: pointer;" productId="<%= product.id %>">
+                    <div class="container-fluid" productId="<%= product.id %>">
+                        <h6 style="color:#0d69d3;cursor: pointer;" productId="<%= product.id %>"><strong
+                                productId="<%= product.id %>">
+                                <% if (product.model.includes('Inch')) { let model=product.model.replace('Inch', '"' ) %>
+                                    <%= model %>
+                                        <% } else {%>
+                                            <%= product.model %>
+                                                <% } %>
+                            </strong></h6>
+                    </div>
+                    <div class="container-fluid" productId="<%= product.id %>">
+                        <img src="<%= product.display_img %>" alt="Product Image" height="auto" width="150px"
+                            productId="<%= product.id %>" />
+                    </div>
+                    <div class="container-fluid mt-2" productId="<%= product.id %>">
+                        <div class="row" productId="<%= product.id %>">
+                            <div class="col" productId="<%= product.id %>">
+                                <h6 style="color:#0d69d3" productId="<%= product.id %>">Tk.<del>
+                                        <%= product.mrp %>
+                                    </del>
+                                </h6>
+                            </div>
+                            <div class="col" productId="<%= product.id %>">
+                                <h6 style="color:#0d69d3" productId="<%= product.id %>">Tk.<%= product.offer_price %>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% })} %>
+                
+        </div>
+    </div>
+   
 
     
     <%- include('./partials/footer.ejs') %>
@@ -156,6 +223,12 @@
                     $('#filterDiv-1').addClass('hide')
                 }
                 
+            })
+
+            $(document).on('click', '.product', function (e) {
+                let pid = e.target.getAttribute('productId');
+                window.location.replace(`/details/${pid}`);
+
             })
             
             $("input[type='checkbox']").click(function (e) {

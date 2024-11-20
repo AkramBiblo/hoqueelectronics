@@ -1,0 +1,145 @@
+<body>
+  <div class="container mt-4 p-3">
+    <a class="btn btn-outline-dark admin-button" href="/he2024admin">Admin Panel</a>
+    <!-- <a class="btn btn-light admin-button" href="/allproducts">All Products</a> -->
+    <!-- <a class="btn btn-light admin-button" href="/allOrders">All Orders</a> -->
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col p-4">
+        <div class="row mt-3">
+          <div class="col-lg-4 mt-2 text-right">
+              <h6><label for="pur_date">From</label></h6>
+          </div>
+          <div class="col-lg-8">
+              <input type="date" class="form-control" id="from_date" name="from_date">
+          </div>
+        </div>
+          <div class="row mt-3">
+            <div class="col-lg-4 mt-2 text-right">
+                <h6><label for="pur_date">To</label></h6>
+            </div>
+            <div class="col-lg-8">
+                <input type="date" class="form-control" id="to_date" name="to_date">
+            </div>
+          </div>
+          <div class="container-fluid d-flex justify-content-end mt-3">
+            <input type="submit" class="btn btn-outline-info" id="generate" value="Generate">
+          </div>
+      </div>
+      <div class="col p-5">
+        <div id="reportDiv">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td><h6>Total Order : <span id="orderQty"></span></h6></td>
+                <td><h6>Value (BDT) : <span id="orderValue"></span></h6></td>
+              </tr>
+              <tr class="text-success">
+                <td><h6>Total Complete Order : <span id="completeOrder"></span></h6></td>
+                <td><h6>Value (BDT) : <span id="completeOrderValue"></span></h6></td>
+              </tr>
+              <tr class="text-danger">
+                <td><h6>Total Incomplete Order : <span id="incompleteOrder"></span></h6></td>
+                <td><h6>Value (BDT) : <span id="incompleteOrderValue"></span></h6></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <h6>Total Order : <span id="orderQty"></span> => Value (BDT) <span id="orderValue"></span></h6> -->
+          <!-- <h6>Total Complete Order : <span id="completeOrder"></span></h6> -->
+          <!-- <h6>Total Incomplete Order : <span id="incompleteOrder"></span></h6> -->
+        </div>
+      </div>
+    </div>
+      <div class="container p-3">
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Customer Name</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th class="pl-3">Order Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="orderTable">
+              
+            </tbody>
+          </table>
+    </div>
+  </div>
+  
+      <script>
+        $(document).ready(() => {
+        // $("#reportDiv").hide()
+        $("#generate").click(() => {
+          
+          let from_date = $("#from_date").val()
+          let to_date = $("#to_date").val()
+          if (from_date == "" || to_date == "") {
+            alert("From date or To date is empty!")
+            return
+          }
+          $.ajax({
+            url: "/get_custom_orders",
+            type: "post",
+            data: {
+              from_date : from_date,
+              to_date : to_date
+            },
+            success: (data) => {
+                $("#orderTable").empty()
+                $("#orderValue").text("")
+                $("#orderQty").text("")
+                $("#completeOrder").text("")
+                $("#incompleteOrder").text("")
+                $("#completeOrderValue").text("")
+                $("#incompleteOrderValue").text("")
+                $("#reportDiv").show()
+                let balance = 0;
+                let incompleteOrder = 0;
+                let completeOrderValue = 0;
+                let incompleteOrderValue = 0;
+                if (data.length > 0) {
+                  $("#orderQty").text(data.length)
+                  for (let i = 0; i < data.length; i++) {
+                    const e = data[i];
+                    if (e.status == "") {
+                      incompleteOrderValue += Number(e.cartTotal)
+                      incompleteOrder++
+                    } else {
+                      completeOrderValue += Number(e.cartTotal)
+                    }
+                    let date = new Date(e.order_time)
+                    const shortDate = date.toLocaleDateString("en-US");
+                    let ct = e.cartTotal
+                    let totalCartAmount = ct.toLocaleString("en-IN");
+                    balance+= e.cartTotal
+                        $("#orderTable").append(`
+                            <tr>
+                                <td>${shortDate}</td>
+                                <td>${e.customer_name}</td>
+                                <td>${e.address}</td>
+                                <td>${e.phoneNumber}</td>
+                                <td class="d-flex justify-content-end pr-5">${totalCartAmount}</td>
+                                <td>${e.status}</td>
+                            </tr>
+                        `)
+                }
+                let completeOrder = data.length - incompleteOrder;
+                $("#completeOrder").text(completeOrder)
+                $("#incompleteOrder").text(incompleteOrder)
+                incompleteOrderValue = incompleteOrderValue.toLocaleString("en-IN")
+                completeOrderValue = completeOrderValue.toLocaleString("en-IN")
+                $("#incompleteOrderValue").text(incompleteOrderValue)
+                $("#completeOrderValue").text(completeOrderValue)
+                 let b = balance.toLocaleString("en-IN");
+                  $("#orderValue").text(b)
+                } else {alert("No orders available in that period!")}
+            }
+          })
+        })
+      })
+      </script>
+</body>

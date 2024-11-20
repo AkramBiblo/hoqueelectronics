@@ -22,3 +22,296 @@
             //    </div>
             //  </div>`)
             //   })  
+
+
+
+            
+            <div class="row">
+                <div id="filterDiv" class="col-3 text-light" style="background-color: black;">
+                    <div class="container-fluid p-4 m-1 f" style="border: 0.5px solid black;border-radius:10px">
+                        <div class="container text-center mt-3">
+                            <h5 for="vol">Filter by price range</h5>
+                            
+                            <!-- ( &#2547;BDT ) -->
+                        </div>
+                        <hr>
+                        <form action="/search/filterbypricerange" method="Post" class="mt-4">
+                            <div class="container">
+                                <div class="container-fluid p0 ip mt-3">
+                                    <input type="text" class="form-control" placeholder="Product Name" name="title" required>
+                                </div>
+                                <div class="row ip mt-3">
+                                    <div class="col-lg-4 ip">
+                                        <h6><label for="rangeFrom">From : </label></h6>
+                                    </div>
+                                    <div class="col-lg-8 ip">
+                                        <input type="text" class="form-control" placeholder="1" name="rangeFrom" required>
+                                    </div>
+                                </div>
+                                <div class="row ip mt-3">
+                                    <div class="col-lg-4 ip">
+                                        <h6><label for="rangeTo">To :</label></h6>
+                                    </div>
+                                    <div class="col-lg-8 ip">
+                                        <input type="text" class="form-control" placeholder="100000" name="rangeTo" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container mt-3 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-outline-light">
+                                    Filter
+                                </button>
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="container">
+                                <div class="container text-center mt-4">
+                                    <h5 for="vol">Filter by brand</h5>
+                                </div>
+                                <div class="container-fluid mt-3" id="filterDiv-1">
+                                    <form action="#" method="get">
+                                        <div class="container">
+                                            <input type="checkbox" class="filterByBrand" name="samsung"> &nbsp;&nbsp; Samsung
+                                        </div>
+                                        <div class="container">
+                                            <input type="checkbox" class="filterByBrand" name="walton"> &nbsp;&nbsp; Walton
+                                        </div>
+                                        <div class="container">
+                                            <input type="checkbox" class="filterByBrand" name="vision"> &nbsp;&nbsp; Vision
+                                        </div>
+                                        <div class="container">
+                                            <input type="checkbox" class="filterByBrand" name="Konka"> &nbsp;&nbsp; Konka
+                                        </div>
+                                        <div class="container">
+                                            <input type="checkbox" class="filterByBrand" name="singer"> &nbsp;&nbsp; Singer
+                                        </div>
+                                    </form>
+                                </div>
+                            
+                                <!-- <div id="accordion" class=" text-dark mt-3">
+                                    <div class="card">
+                                      <div class="card-header text-center">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseOne" id="showlist">
+                                          Show full list
+                                        </a>
+                                      </div>
+                                      <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="container-fluid" id="brandFilterForm">
+                                                
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    
+                </div>
+            </div>
+
+            <form action="/updateQtyFromAP" method="POST">
+                <input type="hidden" name="Id" value="">
+                <input type="hidden" name="Model" value="">
+                <input type="text" name="Qty" style="width: 50px;">
+                <button type="submit" class="btn btn-outline-light">Add</button>
+            </form>
+
+
+            <div class="gallery border p-2 m-1" style="width:270px;">
+                <div class="container-fluid text-center">
+                    <h5>${product.model}</h5>
+                </div>
+                <div class="p-2">
+                    <a href="/details/${product.Id}">
+                        <img src="/uploadedFiles/${product.File_1}" class="img-fluid rounded"
+                            style="max-width: 200px;max-height: 200px;" alt="Product Image">
+                    </a>
+                </div>
+                <div class="col p-2">
+                    <p><strong>Brand :</strong>${product.brand}</p>
+                    <p><strong>Model :</strong>${product.model}</p>
+                    <p><strong>Description :</strong>${product.description}</p>
+                    <p><strong>Product Code :</strong>${product.Id}</p>
+                    <p><strong>Price (BDT) :</strong>${product.mrp}</p>
+                    <div id="${product.Id}">
+                        <input type="hidden" name="productid" value="${product.Id}">
+                        <input type="hidden" name="productTitle" value="${product.name}">
+                        <input type="hidden" name="model" value="${product.model}">
+                        <input type="hidden" name="brand" value="${product.brand}">
+                        <input type="hidden" name="price" value="${product.mrp}">
+                    </div>
+                    <button name="addToCart" productid="${product.Id}" brand="${product.brand}" productTitle="${product.name}"
+                        model="${product.model}" price="${product.mrp}" class="btn btn-outline-dark btn-sm addToCart">
+                        <span class="fab fa-opencart"></span> Add to cart
+                    </button>
+                </div>
+            </div>
+
+
+            $(document).on('click', '.addToCart', function (e) {
+            let TargetName = e.target.getAttribute('name')
+            let unitPrice = e.target.getAttribute('price')
+            let totalPrice = unitPrice;
+            let brand = e.target.getAttribute('brand')
+            let PID = e.target.getAttribute('productid')
+            let qty = 1;
+            let model = e.target.getAttribute('model')
+            let data = [PID, model, brand, qty, unitPrice, totalPrice]
+            if (document.cookie) {
+            // document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cartD = decodedCookie.slice(9);
+            let ca = cartD.split('+');
+            for (let i = 0; i < ca.length; i++) { const e=ca[i]; let arr=e.split(',') if (arr[0]==PID) { return alert("This item
+                already added to your cart!") } } document.cookie=`cartData=${cartD + '+' + data};path=/;`; alert('Product added to
+                your cart successfully!') } else { document.cookie=`cartData=${data};path=/;`; alert('Product added to your cart
+                successfully!') // window.location.reload() } });
+
+
+
+
+
+                <% if (locals.filteredProducts) { 
+                        for (let i = 0; i < filteredProducts.length; i++) {
+                            const e = filteredProducts[i]; %>
+                            
+                            <div class="container-fluid text-center border imgHoverEffect p-2 m-2 product" style="max-width: 330px;cursor: pointer;"
+                                productId="<%= e.id %>">
+                                <div class="container-fluid" productId="<%= e.id %>">
+                                    <h6 style="color:#0d69d3;cursor: pointer;" productId="<%= e.id %>"><strong productId="<%= e.id %>">
+                                            <% if (e.model.includes('Inch')) { let model=e.model.replace('Inch', '"' ) %>
+                                                <%= model %>
+                                                    <% } else {%>
+                                                        <%= e.model %>
+                                                            <% } %>
+                                        </strong></h6>
+                                </div>
+                                <div class="container-fluid" productId="<%= e.id %>">
+                                    <img src="<%= e.display_img %>" alt="Product Image" height="auto" width="150px"
+                                        productId="<%= e.id %>" />
+                                </div>
+                                <div class="container-fluid mt-2" productId="<%= e.id %>">
+                                    <div class="row" productId="<%= e.id %>">
+                                        <div class="col" productId="<%= e.id %>">
+                                            <h6 style="color:#0d69d3" productId="<%= e.id %>">Tk.<del>
+                                                    <%= e.mrp %>
+                                                </del>
+                                            </h6>
+                                        </div>
+                                        <div class="col" productId="<%= e.id %>">
+                                            <h6 style="color:#0d69d3" productId="<%= e.id %>">Tk.<%= e.offer_price %>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                       <% }} %>
+
+
+                    <div class="container d-flex justify-content-center f mt-5">
+                        <div style="max-width:750px">
+                            <div class="container mt-3 p-3 billingInfo">
+                                <div class="col-md">
+                                    <div class="container">
+                                        <h4>Customer Info -</h4>
+                                        <h6 class="mt-3">Note: Fill the form with correct information</h6>
+                                    </div>
+                                    <form action="/billingInfo" method="post" id="cheoutSubmit">
+                                        <div class="row mt-3">
+                                            <% if (locals.message) {%>
+                                                <input type="hidden" name="tcp" value="<%= message.cardTotal %>">
+                                                <% } %>
+                                                    <div class="col-lg-4">
+                                                        <h6><label for="FullName"><span class="text-danger">***</span> Full Name</label>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" name="FullName" placeholder="John Doe"
+                                                            required>
+                                                    </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-lg-4">
+                                                <h6><label for="Address"><span class="text-danger">***</span> Address</label></h6>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <textarea name="Address" id="" cols="35" rows="3" placeholder="Road 25, Lane 3..."
+                                                    required></textarea>
+                                                <!-- <textarea type="text" class="form-control" name="Address" placeholder="Road 25, Lane 3..." required> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row mt-3">
+                                    <div class="col-lg-4">
+                                        <h6><label for="City"><span class="text-danger">***</span> City</label></h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" name="City" placeholder="Halishahar" required>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-lg-4">
+                                        <h6><label for="Division"><span class="text-danger">***</span> Division</label></h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" name="Division" placeholder="Dhaka Division" required>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-lg-4">
+                                        <h6><label for="PostCode"><span class="text-danger">***</span> Post Code</label></h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" name="PostCode" placeholder="4215" required>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-lg-4">
+                                        <h6><label for="Email"><span class="text-danger">***</span> Email</label></h6>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" name="Email" placeholder="example@gmail.com" required>
+                                    </div>
+                                </div> -->
+                                        <div class="row mt-3">
+                                            <div class="col-lg-4">
+                                                <h6><label for="phoneNumber"><span class="text-danger">***</span> Contact Nr.</label></h6>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" name="phoneNumber" placeholder="+8801878369731"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="container d-flex justify-content-end mt-4 mr-3">
+                                            <input class="btn btn-success mr-2" name="submit" type="submit" value="Proceed">
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div />
+
+
+                    <% if (locals.message !== null) {
+          let brand = message[0][0]
+          let category = message[0][1]
+          let qty = message[0][2]
+          for (let i = 0; i < brand.length; i++) {
+            const b = brand[i];
+            for (let j = 0; j < category.length; j++) {
+              const c = message[1][j];
+              const q = qty[j]; %>
+              <tr>
+                <td>
+                  <%= b %>
+                </td>
+                <td>
+                  <%= c + ":" + q %>
+                </td>
+              </tr>
+          <% } } } %>            

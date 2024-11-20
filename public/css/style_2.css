@@ -1,0 +1,293 @@
+ 
+  * {
+    box-sizing: border-box;
+  }
+  .imgHoverEffect:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .bg_red {
+    background-color: #fc0303;
+  }
+  .txt_red {
+    color: #fc0303;
+  }
+  .bg_red {
+    background-color: #003471;
+  }
+  .txt_red {
+    color: #003471;
+  }
+  #frame {
+    height: 450px;
+    width: 600px;
+  }
+
+  .changeColorOnHover:hover{
+    background-color: rgb(179, 236, 238);
+  }
+
+ .logo {
+  height: 150px;
+  width: auto;
+ }
+  
+  .primary_contact_2 {
+    display: none;
+  }
+
+.p0 {
+  padding: 0;
+}
+
+.h {
+    display: none;
+}
+
+#productsMenu > ul {
+  padding: 20px;
+  list-style-type: none;
+}
+
+#adminBg { 
+  background: url("/img/banner/LaptopStore.jpg") no-repeat center fixed; 
+  background-size: cover;
+}
+#allProductsPage { 
+  background: url("/img/banner/allproducts.jpg") no-repeat center fixed; 
+  background-size: cover;
+}
+
+.font_14px {
+  font-size: 14px;
+}
+
+.detailsUl > li {
+  margin-top: -5px;
+}
+#searchDiv_1 {
+  width: 400px;
+  margin-top: 60px;
+}
+#searchDiv_2 {
+  display: none;
+}
+.tdn {
+  text-decoration: none;
+  color:black
+}
+#productNavbar, #productNavbar_2 {
+  background-color: black
+}
+.search {
+  color: black
+}
+.billingInfo {
+  background-color: rgb(179, 222, 226); 
+  max-width: 500px;
+  border-radius: 20px;
+}
+#productNavbar_2 {
+  display: none;
+}
+#topMyCart {
+  display: none;
+}
+#bottomMyCart {
+  margin-left:400px
+}
+/* #collapsibleNavbar_2 a:hover {
+  background-color: #003471;
+  border-radius: 10px;
+}  */
+#HomeNavbar a:hover {
+  background-color: #fc0303;
+  color: white;
+  border-radius: 10px;
+}
+
+
+#HomeNavbarUl {
+  margin-top: 60px;
+}
+@media screen and (max-width: 1000px) {
+  #searchDiv_1 {
+    margin: 0 10px 30px 0;
+  }
+  #topMyCart {
+    display: block;
+  }
+  #productNavbar {
+    display: none;
+  }
+  #productNavbar_2 {
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) {
+     .head {
+       padding: 0;
+     } 
+     ._head {
+      font-size: 25px;
+     }
+     ._headB {
+      font-size: 12px;
+     }
+   }
+
+   @media screen and (max-width: 600px) {
+    #HomeNavbarUl {
+      margin-top: 8px;
+    }
+   }
+
+   @media screen and (max-width: 500px) {
+    ._head {
+      font-size: 20px;
+     }
+     ._headB {
+      font-size: 10px;
+     }
+     #searchDiv_1 {
+      display: none;
+     }
+     #searchDiv_2 {
+      display: block;
+     }
+   }
+   
+  
+   
+   @media screen and (max-width: 400px) {
+    .ftr_subsc {
+      font-size: 16px;
+    }
+    .f {
+      padding: 0;
+    }
+    .hideOnMobile {
+      display: none;
+    }
+   }
+
+   /* #mycart {
+    animation-name: moveMyCart;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+   }
+   @keyframes moveMyCart {
+    0% {color: #0185CF;}
+    100% {color: #01cf0b;text-shadow: 5px 5px 5px #141414;margin-left: 300px;}
+  } */
+   
+   @keyframes changeColor {
+    0% {color: #fc0303;text-shadow: 5px 5px 5px #141414;}
+    50% {color: #003471;}
+    100% {color: #fc0303;text-shadow: 5px 5px 5px #141414;}
+  }
+
+  .fa-bars:hover {
+    color: #fc0303;
+  }
+
+  .hide {
+    display: none;
+  }
+  
+  .gallery:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #firstHeading {
+    animation-name: changeColor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  #map {
+    height: 100%;
+  }
+  
+   @media screen and (max-width: 330px) {
+   #frame {
+      height: 300px;
+      width: 300px;
+    }
+   }
+
+  @media screen and (max-width: 300px) {
+    .our_services,
+    .ftr_head {
+      font-size: 20px;
+    }
+    .ftr_subsc {
+      font-size: 13px;
+    }
+    
+    .ftr_disc,
+    .about_disc,
+    .ftr_address {
+      font-size: 13px;
+      
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .logo {
+      width: 200px;
+      height: auto;
+    }
+
+  }
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  

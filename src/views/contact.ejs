@@ -1,38 +1,137 @@
 <body>
   <%- include('./partials/header.ejs') %>
 
-  <div class="container f" id="goTotop">
+  <div class="container">
     <div class="row">
-      <div class="col-md p-4">
-          <h1 class="features">Store Location</h1>
-         <p>
-          Shop No: 13, 1st floor, Central Shopping Complex, GEC Circle, O R Nizam Road, Chittagong. <br>
-            Contact Number: +(880)1984-701062, +(880)1984-701062 <br>
-            Email address: toptechonlineshop.bd@gmail.com
-         </p>
+      <div class="col-md p-2">
+        <h1 class="features _head">
+          <i class="fas fa-store-alt" style="font-size: 36px"></i> &nbsp;Store
+          Location
+        </h1>
+        <ul>
+          <li>
+            <a class="mapName ftr_address"
+              style="text-decoration: none; color: black"
+              id="wh"
+              >Warehouse</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="nbs"
+              >Noyabazar Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address"
+              style="text-decoration: none; color: black"
+              id="cbs"
+              >College Bazar Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="vts"
+              >Bhatiary Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="bts"
+              >Bandartila Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address"
+              style="text-decoration: none; color: black"
+              id="mrs"
+              >Matiranga Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="shs"
+              >Sharkarhat Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="bhs"
+              >Bohoddarhat Showroom</a
+            >
+          </li>
+          <li>
+            <a class="mapName ftr_address" style="text-decoration: none; color: black" id="kcs"
+              >Khagrachari Showroom</a>
+          </li>
+        </ul>
       </div>
       <div class="col">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.8658888600075!2d91.81996931401338!3d22.35869218529326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd89aa9c779cb%3A0x1daab9f32f51ba27!2sCentral%20Shopping%20Complex%2C%20562%20O.R.%20Nizam%20Rd%2C%20Chittagong!5e0!3m2!1sen!2sbd!4v1656406650718!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- <div class="container">
+            <h6>Find Us</h6>
+            <i style='font-size:24px' class='fas'>&#xf3c5;</i><a class="text-light mapName" id="khulshiMap">&nbsp;Khulshi Campus</a>
+            <i style='font-size:24px' class='fas'>&#xf3c5;</i><a class="text-light mapName" id="madarbariMap">&nbsp;Madarbari Campus</a>
+            <i style='font-size:24px' class='fas'>&#xf3c5;</i><a class="text-light mapName" id="majhirghatMap">&nbsp;Majhirghat Campus</a>
+        </div> -->
+        <div class="container text-center embed-responsive embed-responsive-16by9" id="mapDiv">
+          <iframe
+          id="map"
+          class="storeLocation"
+          name="warehouse"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpoacy="no-referrer-when-downgrade"
+        ></iframe>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-end mb-5">
-    <a href="#goTotop" class="btn btn-outline-info" data-toggle="tooltip" data-placement="left" title="Go to top!"><i class="fas fa-arrow-alt-circle-up"></i></a>
-</div>
 
-<%- include('./partials/footer.ejs') %>
+  <%- include('./partials/footer.ejs') %>
 
-<script>
-$(document).ready(() => {
-   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-       anchor.addEventListener('click', function (e) {
-           e.preventDefault();
-           document.querySelector(this.getAttribute('href')).scrollIntoView({
-               behavior: 'smooth'
-           });
-       });
-   });
-})
+  <script>
+        $(".mapName").css("cursor", "pointer")
+        $("#wh").click(() => {
+            $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#nbs").click(() => {
+            $("#map").attr('src', "https://www.google.com/maps/embed?pb=!3m2!1sen!2sbd!4v1678463446893!5m2!1sen!2sbd!6m8!1m7!1sG92XCU5syf__lwM6ZY291w!2m2!1d22.34528851608543!2d91.7875553606445!3f241.82705012325266!4f1.501626857012269!5f0.7820865974627469")
+        })
+        $("#cbs").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#vts").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#bts").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#mrs").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#shs").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#bhs").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
+        $("#kcs").click(() => {
+          $("#map").attr('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd")
+        })
 
-</script>
+    $("a").click((e) => {
+      let name = e.target.getAttribute("name");
+
+      if (name == "warehouse") {
+        $("iframe").attr(
+          "src",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.9587343379576!2d91.77052834118467!3d22.355186944859994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd96b877cdf11%3A0x5d1a760821d41d75!2sNurjahan%20Group.!5e0!3m2!1sen!2sbd!4v1678458939091!5m2!1sen!2sbd"
+        );
+      } else if (name == "nbs") {
+        $("iframe").attr(
+          "src",
+          "https://www.google.com/maps/embed?pb=!3m2!1sen!2sbd!4v1678463446893!5m2!1sen!2sbd!6m8!1m7!1sG92XCU5syf__lwM6ZY291w!2m2!1d22.34528851608543!2d91.7875553606445!3f241.82705012325266!4f1.501626857012269!5f0.7820865974627469"
+        );
+      }
+    });
+  </script>
 </body>

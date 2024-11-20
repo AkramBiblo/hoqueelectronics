@@ -1,7 +1,12 @@
 <body>
     <%- include('./partials/header.ejs') %>
     <div class="container text-center">
-      <h4>My Cart</h4>
+      <h5>My Cart</h5>
+          <div class="container text-center" id="cartMessageDiv">
+            <div class="alert alert-success">
+                Your cart is empty!
+              </div>
+          </div>
     </div>
     <div class="container" id="mobileMyCart">
       
@@ -23,47 +28,66 @@
         </tbody>
       </table>
     </div> -->
-    <div class="container d-flex justify-content-end">
-      <h5 class="m-3">Total Price: <span id="totalCartPrice_2" value="0"></span></h5>
-      <a href="/checkout" type="button" id="checkoutBtn_2" value="0" class="btn btn-outline-dark btn-sm m-3">Checkout</a>
+    <div class="container-fluid">
+      <h6 class="m-3 text-success">Cart Total: <span id="totalCartPrice_2" value="0">0</span></h6>
+      <div class="container-fluid d-flex justify-content-end">
+        <!-- <a href="/checkout" type="button" id="checkoutBtn_2" value="0" class="btn btn-outline-dark btn-sm m-3">Checkout</a> -->
+        <button id="checkoutBtn_2" onclick="checkout()" class="btn btn-outline-dark btn-sm m-3">
+          Checkout
+        </button>
+      </div>
     </div>
 
       <script>
-        if (document.cookie) {
-        let decodedCookie = decodeURIComponent(document.cookie);
+        
+        $(document).ready(function(){
+          $("#checkoutBtn_2").hide()
+          $("#cartMessageDiv").hide()
+          let cartData = getCookie("cartData");
+          if (cartData != "") {
+          $("#checkoutBtn_2").show()
+            let decodedCookie = decodeURIComponent(document.cookie);
                       let cartD = decodedCookie.slice(9);
                       let ca = cartD.split('+');
                       let tPrice = 0
                       for (let i = 0; i < ca.length; i++) {
                         const e = ca[i];
                         let arr = e.split(',')
-                        let totalPrice = Number(arr[6])
+                        // alert(arr)
+                        let totalPrice = Number(arr[5])
                         tPrice += totalPrice
+                        let up = Number(arr[4])
+                        let u = up.toLocaleString("en-IN")
+                        let tp = Number(arr[5])
+                        let t = tp.toLocaleString("en-IN")
                         $('#mobileMyCart').append(`
                         <div class="container border mt-2 p-2" style="border-radius:10px" remove_2="${arr[0]}">
-                          <h5>Item Id: ${arr[0]}</h5>
-                          <hr>
-                        <p><strong>Name: </strong> ${arr[1]}</p>
-                        <p><strong>Model: </strong> ${arr[2]}</p>
-                        <p><strong>Brand: </strong> ${arr[3]}</p>
-                        <p><strong>Qty: </strong> <input onchange="cal(this.value, ${arr[5]}, ${arr[0]})" type='number' value="${arr[4]}" min="1"/></p>
-                        <p><strong>Unit Price: </strong> ${arr[5]}</p>
-                        <p><strong>Total Price: </strong> <span cAmount_2="${arr[0]}">${arr[6]}</span></p>
+                        <p><strong>Item Id: </strong> ${arr[0]}</br>
+                          <strong>Model: </strong> ${arr[1]}</br>
+                          <strong>Brand: </strong> ${arr[2]}</br>
+                          <span class="d-flex"><strong>Qty: </strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input style="width:70px" onchange="cal(this.value, ${arr[4]}, ${arr[0]})" type='number' value="${arr[3]}" min="1"/></span>
+                          <strong>Unit Price: </strong> ${u}</br>
+                          <strong>Total Price: </strong> <span cAmount_2="${arr[0]}">${t}</span></p>
                         <button onclick="removeCartItem(${arr[0]})" class="btn btn-outline-danger">Remove</button>
                         </div>
                         `)
                       }
-                        $('#totalCartPrice_2').val(tPrice)
-                        $('#totalCartPrice_2').text(tPrice)
-                        $('#checkoutBtn_2').val(tPrice)
-      }
+                         let p = tPrice.toLocaleString("en-IN")
+                        $('#totalCartPrice_2').val(p)
+                        $('#totalCartPrice_2').text(p)
+                        // $('#checkoutBtn_2').val(tPrice)
+          } else {
+            $("#cartMessageDiv").show()
+          }
+        });
 
-      function cal(v, a, id) {
+  function cal(v, a, id) {
   let val = Number(v)
   let amount = Number(a)
   let totalAmount = val * amount;
+  let ta = totalAmount.toLocaleString("en-IN")
   let GrandAmount = 0;
-  document.querySelectorAll(`td[cAmount_2='${id}']`)[0].innerHTML = totalAmount;
+  document.querySelectorAll(`span[cAmount_2='${id}']`)[0].innerHTML = ta;
   let decodedCookie = decodeURIComponent(document.cookie);
                       let cartD = decodedCookie.slice(9);
                       if (cartD.includes("+") == true) {
@@ -74,9 +98,9 @@
                           const e = ca[i];
                           let arr = e.split(',')
                           if (arr[0] == id) {
-                            arr[4] = val
-                            arr[6] = totalAmount
-                            let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                            arr[3] = val
+                            arr[5] = totalAmount
+                            let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                             GrandAmount+= totalAmount;
                             if (i == 0) {
                               cookieData.push(data)
@@ -84,13 +108,13 @@
                               cookieData.push('+' + data)
                             }
                           } else {
-                            let singleAmount = Number(arr[6])
+                            let singleAmount = Number(arr[5])
                             GrandAmount+= singleAmount;
                             if (i == 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                               cookieData.push(data)
                             } else {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                               cookieData.push('+' + data)
                             }
                           }
@@ -99,21 +123,22 @@
                         document.cookie = `cartData=${cookieData};path=/;`;
                       } else {
                         let arr = cartD.split(',')
-                        arr[4] = val
-                        arr[6] = totalAmount
+                        arr[3] = val
+                        arr[5] = totalAmount
                         GrandAmount+= totalAmount;
-                        let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                        let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                         document.cookie = `cartData=${data};path=/;`;
                       }
                       
                       
-                 document.getElementById('totalCartPrice').innerHTML = GrandAmount;   
+                //  document.getElementById('totalCartPrice').innerHTML = GrandAmount;
+                GrandAmount = GrandAmount.toLocaleString("en-IN")   
                  document.getElementById('totalCartPrice_2').innerHTML = GrandAmount;   
 }
 
  function removeCartItem(id) {
   let pid = Number(id)
-  document.querySelectorAll(`tr[remove_2="${id}"]`)[0].remove()
+  document.querySelectorAll(`div[remove_2="${id}"]`)[0].remove()
   
   let decodedCookie = decodeURIComponent(document.cookie);
                       let cartD = decodedCookie.slice(9);
@@ -127,30 +152,47 @@
                           let arr = e.split(',')
                           let pidInArr = Number(arr[0])
                           if (pid !== pidInArr) {
-                            let singleAmount = Number(arr[6]);
+                            let singleAmount = Number(arr[5]);
                             GrandAmount+= singleAmount
                             if (i == 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                               cookieData.push(data)
                             } else if (cookieData.length > 0) {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                               cookieData.push('+' + data)
                             } else {
-                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]]
+                              let data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
                               cookieData.push(data)
                             }
                           }
                         }
                         document.cookie = `cartData=${cookieData};path=/;`;
-                        document.getElementById('totalCartPrice').innerHTML = GrandAmount;  
+                        GrandAmount = GrandAmount.toLocaleString("en-IN")  
+                        document.getElementById('totalCartPrice_2').innerHTML = GrandAmount;  
                       } else {
                         document.cookie = "cartData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                        document.getElementById('totalCartPrice').innerHTML = 0; 
+                        document.getElementById('totalCartPrice_2').innerHTML = 0; 
                       }
                       
                       
                  
  }
  
+
+ function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
       </script>
 </body>

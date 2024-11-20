@@ -6,7 +6,7 @@
     <!-- Form  -->
 <div class="container-fluid text-info bg-light mt-5 mb-2 border p-4">
     <div class="container-fluid">
-        <a class="btn btn-outline-dark admin-button" href="/toptech2022admin">Admin Panel</a>
+        <a class="btn btn-outline-dark admin-button" href="/he2024admin">Admin Panel</a>
     </div>
     <div class="container text-info text-center">
         <h3>Edit Product</h1>
@@ -51,26 +51,27 @@
             <div class="col-md">
                 <div class="row mt-3">
                     <div class="col-lg-4">
-                        <h6><label for="Title">Title</label></h6>
+                        <h6><label for="Title">Name</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Title" value="<% if (locals.message != null) {%><%= message.Title %><% } %>" >
+                        <input type="text" class="form-control" name="Title" value="<% if (locals.message != null) {%><%= message.name %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-4">
-                        <h6><label for="KeyWords">Keywords</label></h6>
+                        <h6><label for="Category">Category</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="KeyWords" value="<% if (locals.message != null) {%><%= message.KeyWords %><% } %>" >
+                        <input type="text" class="form-control" name="Category" value="<% if (locals.message != null) {%><%= message.category %><% } %>" >
                     </div>
                 </div>
+                
                 <div class="row mt-3">
                     <div class="col-lg-4">
                         <h6><label for="Brand">Brand</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Brand" value="<% if (locals.message != null) {%><%= message.Brand %><% } %>" >
+                        <input type="text" class="form-control" name="Brand" value="<% if (locals.message != null) {%><%= message.brand %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -78,154 +79,7 @@
                         <h6><label for="Type">Type</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Type" value="<% if (locals.message != null) {%><%= message.Type %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Model">Model</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control " name="Model" value="<% if (locals.message != null) {%><%= message.Model %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Processor">Processor</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control " name="Processor" value="<% if (locals.message != null) {%><%= message.Processor %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="ProcessorFamily">Processor family</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control " name="ProcessorFamily" value="<% if (locals.message != null) {%><%= message.ProcessorFamily %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Memory">Memory</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control " name="Memory" value="<% if (locals.message != null) {%><%= message.Memory %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Storage">Storage</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control " name="Storage" value="<% if (locals.message != null) {%><%= message.Storage %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="GraphicsCard">Graphics Card</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="GraphicsCard" value="<% if (locals.message != null) {%><%= message.GraphicsCard %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="DisplayType">Display Type</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="DisplayType" value="<% if (locals.message != null) {%><%= message.DisplayType %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Webcam">Webcam</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Webcam" value="<% if (locals.message != null) {%><%= message.Webcam %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="OS">Operation System</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="OS" value="<% if (locals.message != null) {%><%= message.OS %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Audio">Audio</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Audio" value="<% if (locals.message != null) {%><%= message.Audio %><% } %>">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="FR">Fingerprint Reader</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="FR" value="<% if (locals.message != null) {%><%= message.FR %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Wireless">Wireless</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Wireless" value="<% if (locals.message != null) {%><%= message.Wireless %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="KF">Keyboard Feature</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="KF" value="<% if (locals.message != null) {%><%= message.KF %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Interface">Interface</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Interface" value="<% if (locals.message != null) {%><%= message.Interface %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Battery">Battery</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Battery" value="<% if (locals.message != null) {%><%= message.Battery %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="BK">Backlit Keyboard</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="BK" value="<% if (locals.message != null) {%><%= message.BK %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Dimensions">Dimensions</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Dimensions" value="<% if (locals.message != null) {%><%= message.Dimensions %><% } %>">
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="Weight">Weight</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Weight" value="<% if (locals.message != null) {%><%= message.Weight %><% } %>">
+                        <input type="text" class="form-control" name="Type" value="<% if (locals.message != null) {%><%= message.type %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -233,31 +87,51 @@
                         <h6><label for="Color">Color</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Color" value="<% if (locals.message != null) {%><%= message.Color %><% } %>" >
+                        <input type="text" class="form-control" name="Color" value="<% if (locals.message != null) {%><%= message.color %><% } %>" >
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-lg-4">
+                        <h6><label for="Barcode">Barcode</label></h6>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="Barcode" value="<% if (locals.message != null) {%><%= message.barcode %><% } %>">
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-md">
+                <div class="row mt-3">
+                    <div class="col-lg-4">
+                        <h6><label for="demo_MRP">Demo MRP</label></h6>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="demo_MRP" value="<% if (locals.message != null) {%><%= message.demo_MRP %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-4">
-                        <h6><label for="PD">Pointer Device</label></h6>
+                        <h6><label for="mrp">MRP</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="PD" value="<% if (locals.message != null) {%><%= message.PD %><% } %>">
+                        <input type="text" class="form-control" name="MRP" value="<% if (locals.message != null) {%><%= message.mrp %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-4">
-                        <h6><label for="Remark">Remark</label></h6>
+                        <h6><label for="Qty">QTY</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Remark" value="<% if (locals.message != null) {%><%= message.Remark %><% } %>">
+                        <input type="text" class="form-control" name="Qty" value="<% if (locals.message != null) {%><%= message.Qty %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-4">
-                        <h6><label for="Price">Price</label></h6>
+                        <h6><label for="KeyWords">Keywords</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Price" value="<% if (locals.message != null) {%><%= message.Price %><% } %>" >
+                        <input type="text" class="form-control" name="KeyWords" value="<% if (locals.message != null) {%><%= message.keyWords %><% } %>" >
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -265,15 +139,7 @@
                         <h6><label for="Description">Description</label></h6>
                     </div>
                     <div class="col-lg-8">
-                        <input type="text" class="form-control" name="Description" value="<% if (locals.message != null) {%><%= message.Description %><% } %>" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <h6><label for="FullDesc">Full Description</label></h6>
-                    </div>
-                    <div class="col-lg-8">
-                        <input type="text" class="form-control" name="FullDesc" value="<% if (locals.message != null) {%><%= message.FullDesc %><% } %>">
+                        <input type="text" class="form-control" name="Description" value="<% if (locals.message != null) {%><%= message.description %><% } %>">
                     </div>
                 </div>
             </div>
